@@ -1,0 +1,142 @@
+@import "../breadcrumb";
+
+
+:root {
+	--plyr-color-main: #e5208b;
+}
+
+.m-single-banner {
+	padding-top: 32px;
+	padding-bottom: 32px;
+	color: #fff;
+
+	@media (min-width: $size-desktop) {
+		padding-top: 40px;
+		padding-bottom: 23px;
+	}
+
+	.container {
+
+		@media (max-width: $size-desktop) {
+			max-width: 782px;
+		}
+
+		h1 {
+			font-size: rem(52px);
+			margin-bottom: 0;
+			margin-top: 50px;
+		}
+	}
+
+	.m-breadcrumb {
+		color: $white;
+
+		a {
+			color: $white;
+		}
+	}
+
+}
+
+.m-single-banner-thumbnail {
+	position: relative;
+
+	&::before {
+		content: "";
+		display: block;
+		background: $blue;
+		height: 50%;
+		width: 100%;
+		position: absolute;
+		top: -1px;
+	}
+
+	.m-single-banner-thumbnail__figure {
+		display: block;
+		width: 1024px;
+		max-width: calc(100% - 32px);
+		margin: 0 auto;
+		position: relative;
+		overflow: hidden;
+
+		@media (min-width: $size-tablet) {
+			// height: 423px;
+			padding-bottom: 0;
+		}
+
+		&.video {
+			padding-bottom: 52.8%;
+
+			@media (min-width: $size-tablet) {
+				height: 423px;
+				padding-bottom: 0;
+			}
+		}
+
+		img {
+			display: block;
+			max-width: 100%;
+			max-height: 705px;
+			height: auto;
+			width: auto;
+			object-fit: contain;
+			height: auto;
+			margin: auto;
+		}
+
+		.plyr {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			position: absolute;
+		}
+
+		.plyr__poster {
+			background-size: cover;
+		}
+
+		.plyr__control--overlaid {
+			border-radius: 0;
+			background: opacity($black, 0.6);
+			display: block;
+			padding: 0;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+			opacity: 1;
+			left: 0;
+			right: 0;
+			transform: inherit;
+			border-radius: 0;
+
+			svg {
+				display: none;
+			}
+
+			&:hover {
+				background: opacity($black, 0.6);
+			}
+
+			&::after {
+				content: "";
+				display: block;
+				position: absolute;
+				left: 0;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				margin: auto;
+				background-image: url(../img/icons/play-video.svg);
+				background-position: center;
+				background-repeat: no-repeat;
+				height: 37px;
+				width: 36px;
+			}
+
+		}
+
+		.plyr--paused .plyr__controls {
+			display: none;
+		}
+	}
+}

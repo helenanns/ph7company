@@ -1,0 +1,41 @@
+.m-breadcrumb {
+	display: flex;
+	list-style: none;
+	font-family: $font-secondary;
+	padding: 14px 0;
+	position: relative;
+
+	li {
+		font-size: rem(11px);
+		line-height: 1;
+		position: relative;
+		padding-right: 25px;
+
+		a {
+			color: $black;
+			text-decoration: none;
+			font-size: rem(13px);
+		}
+
+		&::before {
+			content: "";
+			position: absolute;
+			height: 6px;
+			width: 6px;
+			right: 9px;
+			top: 0;
+			bottom: 0;
+			display: block;
+			margin: auto;
+			background: url(../img/icons/to-right.svg) 0 0 / 6px no-repeat;
+		}
+
+		&:last-of-type {
+
+			&::before {
+				display: none;
+			}
+		}
+
+	}
+}

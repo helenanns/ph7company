@@ -1,0 +1,41 @@
+@import "./_fonts/all";
+@import "./_vendor/all";
+
+* {
+	box-sizing: border-box;
+}
+
+::selection {
+	background: transparent;
+}
+
+html {
+	min-height: 100%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	margin-top: 0 !important;
+}
+
+body {
+	height: 100%;
+	font-family: $font-primary;
+	font-size: 16px;
+	line-height: normal;
+	color: var(--color-dark);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+}
+
+ul,
+ol {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}

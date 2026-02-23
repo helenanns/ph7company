@@ -1,0 +1,37 @@
+.m-cart {
+	display: flex;
+	text-decoration: none;
+	position: relative;
+	border-radius: 8px;
+	align-items: center;
+	justify-content: center;
+	transition: outline-color 0.2s ease !important;
+	height: 100%;
+	width: 100%;
+
+	svg {
+		height: 26px;
+	}
+
+	.m-cart-badge {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: $black;
+		background-color: $white;
+		font-size: rem(10px);
+		font-weight: 600;
+		line-height: 0;
+		border-radius: 100%;
+		position: absolute;
+		top: -6px;
+		right: -3px;
+		height: 16px;
+		width: 16px;
+
+		@media (min-width: $size-desktop) {
+			top: -2px;
+			right: 0;
+		}
+	}
+}

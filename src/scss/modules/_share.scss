@@ -1,0 +1,22 @@
+.m-share {
+	display: flex;
+	justify-content: center;
+	margin: 32px 0 0;
+
+	.m-share__title {
+		font-size: rem(14px);
+		font-weight: 600;
+	}
+
+	.m-share__wrapper {
+		display: flex;
+		justify-content: center;
+		gap: 10px;
+		margin-left: 12px;
+
+		svg {
+			height: 24px;
+			fill: $blue;
+		}
+	}
+}

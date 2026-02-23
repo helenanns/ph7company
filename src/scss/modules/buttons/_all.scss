@@ -1,0 +1,49 @@
+.m-button {
+	display: inline-block;
+	text-decoration: none;
+	cursor: pointer;
+	color: $white;
+	background-color: opacity($black, 1);
+	font-size: rem(14px);
+	line-height: 1.2;
+	font-family: $font-secondary;
+	padding: 1em 1.5em;
+	border: 1px solid $black;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: 600;
+
+
+	&:hover {
+		background-color: #6a6a6a;
+		color: rgb(207, 207, 207);
+		border-color: rgb(106, 106, 106);
+	}
+
+	&.--white {
+		background-color: $white;
+		color: $black;
+
+		&:hover {
+			background-color: $black;
+			color: $white;
+		}
+	}
+
+	&.--blue {
+		background-color: $blue;
+		color: $white;
+
+		&:hover {
+			background-color: $black;
+		}
+	}
+
+	&.--black {
+
+		&:hover {
+			background-color: $blue;
+			color: $white;
+		}
+	}
+}

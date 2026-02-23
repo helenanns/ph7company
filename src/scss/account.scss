@@ -1,0 +1,254 @@
+@import "./base/imports";
+@import "./modules/woocommerce/woocommerce-message";
+@import "./modules/woocommerce/woocommerce-breadcrumb";
+
+
+$gray: #e5e5e5;
+$gray-medium: #ccc;
+
+.l-page .l-page-header {
+	display: block;
+}
+
+.woocommerce-account {
+
+	.woocommerce {
+
+		@media (min-width: $size-desktop) {
+			display: flex;
+			justify-content: space-between;
+		}
+	}
+
+	/* ==============================
+     TÍTULOS
+     ============================== */
+
+	h2 {
+		font-size: 22px;
+		font-weight: 600;
+		margin-bottom: 24px;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+	}
+
+	h3 {
+		font-size: 14px;
+		margin-bottom: 12px;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+	}
+
+	/* ==============================
+     MENU (MOBILE)
+     ============================== */
+
+	.woocommerce-MyAccount-navigation {
+		margin-bottom: 40px;
+
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			border-top: 1px solid $gray;
+		}
+
+		li {
+			border-bottom: 1px solid $gray;
+		}
+
+		a {
+			display: flex;
+			align-items: center;
+			padding: 14px 0;
+			font-size: 12px;
+			font-weight: 500;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			color: $black;
+			transition: color 0.3s ease;
+			text-decoration: none;
+
+			&:hover {
+				color: $blue;
+			}
+		}
+
+		.is-active a {
+			color: $blue;
+			font-weight: 700;
+		}
+	}
+
+	/* ==============================
+     CONTEÚDO
+     ============================== */
+
+	.woocommerce-MyAccount-content {
+
+		p {
+			font-size: 14px;
+			line-height: 1.7;
+			margin-bottom: 16px;
+		}
+	}
+
+	/* ==============================
+     BOTÕES
+     ============================== */
+
+	.button,
+	button,
+	input[type="submit"] {
+		width: 100%;
+		background: $black;
+		color: $white;
+		border: none;
+		padding: 14px;
+		text-transform: uppercase;
+		font-size: 11px;
+		letter-spacing: 1px;
+		cursor: pointer;
+		transition: background 0.3s ease;
+
+		&:hover {
+			background: $blue;
+		}
+	}
+
+	/* ==============================
+     FORMULÁRIOS
+     ============================== */
+
+	form {
+		margin-top: 24px;
+	}
+
+	label {
+		display: block;
+		font-size: 11px;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		margin-bottom: 6px;
+	}
+
+	input[type="text"],
+	input[type="email"],
+	input[type="password"],
+	select,
+	textarea {
+		width: 100%;
+		border: 1px solid $gray-medium;
+		padding: 12px;
+		margin-bottom: 16px;
+		font-size: 14px;
+		background: $white;
+
+		&:focus {
+			outline: none;
+			border-color: $blue;
+		}
+	}
+
+	/* ==============================
+     TABELAS — MOBILE STACK
+     ============================== */
+
+	table {
+		width: 100%;
+		border-collapse: collapse;
+		font-size: 13px;
+	}
+
+	thead {
+		display: none;
+	}
+
+	tr {
+		display: block;
+		border-bottom: 1px solid $gray;
+		padding: 16px 0;
+	}
+
+	td {
+		display: flex;
+		justify-content: space-between;
+		padding: 6px 0;
+
+		&::before {
+			content: attr(data-title);
+			font-weight: 600;
+			text-transform: uppercase;
+			font-size: 10px;
+			letter-spacing: 1px;
+		}
+	}
+
+	/* ==============================
+     ALERTAS
+     ============================== */
+
+	.woocommerce-message,
+	.woocommerce-info,
+	.woocommerce-error {
+		background: $dark-blue;
+		color: $white;
+		padding: 14px 16px;
+		margin-bottom: 24px;
+		font-size: 12px;
+	}
+
+	/* ==============================
+     DESKTOP
+     ============================== */
+
+	@media (min-width: 992px) {
+
+		.woocommerce-MyAccount-navigation {
+			width: 25%;
+			margin-bottom: 0;
+		}
+
+		.woocommerce-MyAccount-content {
+			width: 70%;
+			float: right;
+		}
+
+		h2 {
+			font-size: 32px;
+			margin-bottom: 32px;
+		}
+
+		/* Tabela normal no desktop */
+		thead {
+			display: table-header-group;
+		}
+
+		tr {
+			display: table-row;
+			padding: 0;
+		}
+
+		td {
+			display: table-cell;
+			padding: 16px 0;
+
+			&::before {
+				display: none;
+			}
+		}
+
+		th {
+			text-align: left;
+			font-size: 11px;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			border-bottom: 1px solid $black;
+			padding-bottom: 12px;
+		}
+
+		.button {
+			width: auto;
+		}
+	}
+}

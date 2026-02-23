@@ -1,0 +1,143 @@
+.m-banner-hero {
+	overflow: hidden;
+	position: relative;
+	font-family: $font-primary;
+	aspect-ratio: 0.8465;
+
+
+	@media (min-width: $size-desktop) {
+		aspect-ratio: 2.92 / 1;
+	}
+
+	.swiper {
+		height: 100%;
+		// border-radius: 14px;
+		overflow: hidden;
+	}
+
+	.swiper-slide {
+		height: 100%;
+		width: 100%;
+
+		img {
+			width: 100%;
+			height: 100%;
+			display: block;
+			object-fit: cover;
+			object-position: center;
+		}
+
+		figure {
+			position: relative;
+			margin: 0;
+			overflow: hidden;
+			height: 100%;
+			display: block;
+
+			&::after {
+				content: "";
+				display: block;
+				background: rgba(0, 0, 0, 0.15);
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		}
+	}
+
+	.swiper-button-prev,
+	.swiper-button-next {
+		color: #fff;
+
+		&::after {
+			font-size: 24px;
+		}
+
+		@media (max-width: $size-desktop) {
+			display: none;
+		}
+	}
+
+	.swiper-pagination {
+		bottom: 27px;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		padding: 0 20px;
+
+		.swiper-pagination-bullet {
+			height: 8px;
+			width: 8px;
+			margin: 0;
+			position: relative;
+			opacity: 1;
+			background: transparent;
+			// background: $white;
+			opacity: 0.5;
+			transition: 0.35s ease;
+			border: 1px solid $white;
+
+			&-active {
+				background: $white;
+				height: 10px;
+				width: 10px;
+				opacity: 1;
+				border: 0;
+			}
+		}
+	}
+
+	&-content {
+		padding-top: 64px;
+		position: absolute;
+		z-index: 99;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		color: #ffff;
+		margin: auto;
+		height: fit-content;
+		width: 100%;
+
+		@media (max-width: $size-desktop) {
+			padding-top: 74px;
+		}
+
+		.subtitle {
+			display: block;
+			// font-family: $font-secondary;
+			font-size: rem(14px);
+			font-weight: 600;
+			margin-bottom: 16px;
+			text-transform: uppercase;
+			padding-left: 3px;
+
+			@media (min-width: $size-desktop) {
+				font-size: rem(16px);
+			}
+		}
+
+		& > h2 {
+			font-size: rem(30px);
+			line-height: 1;
+			width: rem(678px);
+			font-weight: 400;
+			letter-spacing: 0.02em;
+			max-width: 70%;
+			margin-bottom: 28px;
+
+			@media (min-width: $size-desktop) {
+				font-size: rem(55px);
+				max-width: 44%;
+				margin-bottom: 34px;
+			}
+
+			@media (min-width: $size-desktop-large) {
+				font-size: rem(64px);
+			}
+		}
+	}
+}

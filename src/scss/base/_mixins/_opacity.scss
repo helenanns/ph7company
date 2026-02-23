@@ -1,0 +1,13 @@
+@function opacity($color, $opacity) {
+
+	@if $opacity < 0 or $opacity > 1 {
+		$opacity: 1;
+	}
+
+	$red:   red($color);
+	$green: green($color);
+	$blue:  blue($color);
+
+	@return rgba($red, $green, $blue, $opacity);
+}
+

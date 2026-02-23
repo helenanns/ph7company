@@ -1,0 +1,37 @@
+.m-search-close {
+	right: 0 !important;
+	left: auto !important;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	transform: rotate(90deg);
+	opacity: 0;
+	visibility: hidden;
+	transition: 0.4s;
+	position: absolute;
+	color: opacity($white, 0.4);
+
+	width: 40px;
+	height: 2px;
+
+	&::before {
+		transform: rotate(-90deg);
+		height: 100%;
+		width: 100%;
+		border-radius: 8px;
+		display: block;
+		content: "";
+		background: #fff;
+	}
+
+	&::after {
+		transform: rotate(-90deg);
+		height: 100%;
+		width: 100%;
+		border-radius: 8px;
+		display: block;
+		content: "";
+		background: #fff;
+	}
+}

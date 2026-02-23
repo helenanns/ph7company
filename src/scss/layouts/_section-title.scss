@@ -1,0 +1,30 @@
+.m-section-title {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 36px;
+
+	&.--center {
+		justify-content: center;
+		flex-direction: column;
+		text-align: center;
+
+		@media (max-width: $size-desktop) {
+
+			.dd-m-section-title-wrapper {
+				flex-wrap: wrap;
+				justify-content: center;
+			}
+		}
+	}
+
+	h2 {
+		font-family: $font-secondary;
+		font-size: rem(20px);
+		line-height: 1;
+		font-weight: 400;
+		margin: 0;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+	}
+}

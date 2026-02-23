@@ -1,0 +1,145 @@
+@import "./card-product";
+
+.m-products {
+	width: 100%;
+	padding-top: 46px;
+	position: relative;
+	overflow: hidden;
+	color: $black;
+
+	@media (min-width: $size-desktop) {
+		padding-top: 33px;
+		padding-bottom: 30px;
+	}
+
+	&:last-of-type {
+		padding-bottom: 54px;
+
+		@media (min-width: $size-desktop) {
+			padding-bottom: 71px;
+		}
+	}
+
+	.swiper-button-next,
+	.swiper-button-prev {
+		color: $black;
+
+		&::after {
+			font-size: 16px;
+			color: $black;
+			transition: opacity 0.3s;
+
+		}
+	}
+
+	.swiper-button-next {
+		right: -34px;
+
+		@media (min-width: $size-desktop) {
+			right: -18px;
+			margin-top: -43px;
+		}
+	}
+
+	.swiper-button-prev {
+		left: -34px;
+
+		@media (min-width: $size-desktop) {
+			left: -18px;
+			margin-top: -43px;
+		}
+	}
+
+	.swiper-button-disabled {
+		display: none;
+	}
+
+	&.--blue,
+	&.--dark {
+		color: $white;
+
+		.m-products-header,
+		.m-card-product {
+
+			a {
+				color: opacity($white, 0.9);
+			}
+		}
+
+		.swiper-button-next,
+		.swiper-button-prev {
+			color: $white;
+		}
+	}
+
+	&.--dark {
+		background: $black;
+	}
+
+	&.--blue {
+		background: $blue;
+	}
+
+	& > .container {
+		position: relative;
+	}
+
+	.m-products-header {
+		margin-bottom: 24px;
+		font-family: $font-secondary;
+
+		@media (min-width: $size-desktop) {
+			margin-bottom: 27px;
+		}
+
+		h2 {
+			font-family: $font-secondary;
+			margin-bottom: 0;
+			font-size: rem(19px);
+			line-height: 1;
+			letter-spacing: 0.05em;
+			font-weight: 600;
+			color: $black;
+			text-align: center;
+			text-transform: uppercase;
+
+			@media (min-width: $size-desktop) {
+				font-size: rem(26px);
+			}
+		}
+
+		a {
+			font-size: rem(11px);
+			text-transform: uppercase;
+			color: $black;
+			font-weight: 600;
+			text-decoration: none;
+			letter-spacing: 0.1em;
+
+			@media (min-width: $size-desktop) {
+				font-size: rem(12px);
+			}
+		}
+	}
+
+	.m-products-list {
+
+		@include reset-ul;
+		display: grid;
+		row-gap: 22px;
+		column-gap: 14px;
+		grid-template-columns: repeat(2, 1fr);
+
+		@media (min-width: $size-desktop) {
+			row-gap: 36px;
+			column-gap: 32px;
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+
+	.m-products__link {
+		margin: 41px auto 0;
+		display: block;
+		width: fit-content;
+	}
+}
