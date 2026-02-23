@@ -24,7 +24,7 @@ const vendors = {
 		`${npm}/swiper/swiper-bundle.min.css`,
 		`${npm}/select2/dist/css/select2.min.css`,
 	],
-	js: [`${npm}/jquery/dist/jquery.min.js`],
+	js: [],
 };
 
 function vendorCSS() {

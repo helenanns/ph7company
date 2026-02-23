@@ -26,7 +26,8 @@ This repository contains the custom WordPress theme used by PH7 Company for its 
 | ESLint     | 8.x                             | Airbnb + WordPress config             |
 | StyleLint  | 13.x                            | WordPress-based rules                 |
 | Husky / lint-staged | 7.x / 12.x             | pre-commit linting/formatting         |
-| jQuery, Plyr, Swiper, Select2, normalize.css, etc. | listed in `dependencies`        |
+| JavaScript | vanilla ES modules | no jQuery dependency                               |
+| Plyr, Swiper, Select2, normalize.css, etc.  | listed in `dependencies`        |
 
 ---
 

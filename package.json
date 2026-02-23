@@ -54,8 +54,6 @@
   },
   "dependencies": {
     "autoprefixer": "^10.4.2",
-    "jquery": "^3.4.1",
-    "jquery-mask-plugin": "^1.14.16",
     "normalize.css": "^8.0.1",
     "plyr": "^3.7.8",
     "postcss": "^8.4.21",
