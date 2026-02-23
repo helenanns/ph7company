@@ -7,28 +7,28 @@
         <li>
             <a href="">
                 <?php echo file_get_contents(
-                    $theme_uri . '/assets/img/icons/instagram.svg'
+                    $theme_uri . '/dist/img/icons/instagram.svg'
                 ); ?>
             </a>
         </li>
         <li>
             <a href="">
                 <?php echo file_get_contents(
-                    $theme_uri . '/assets/img/icons/twitter.svg'
+                    $theme_uri . '/dist/img/icons/twitter.svg'
                 ); ?>
             </a>
         </li>
         <li>
             <a href="">
                 <?php echo file_get_contents(
-                    $theme_uri . '/assets/img/icons/whatsapp.svg'
+                    $theme_uri . '/dist/img/icons/whatsapp.svg'
                 ); ?>
             </a>
         </li>
         <li>
             <a href="">
                 <?php echo file_get_contents(
-                    $theme_uri . '/assets/img/icons/instagram.svg'
+                    $theme_uri . '/dist/img/icons/instagram.svg'
                 ); ?>
             </a>
         </li>

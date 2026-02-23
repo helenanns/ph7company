@@ -20,8 +20,8 @@ function head_content()
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
 
-    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo $theme_uri; ?>/assets/img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo $theme_uri; ?>/assets/img/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo $theme_uri; ?>/dist/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo $theme_uri; ?>/dist/img/favicon/favicon-16x16.png">
 
     <?php
     if (is_single()) {

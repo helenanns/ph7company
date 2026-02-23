@@ -4,7 +4,7 @@ global $theme_uri;
 ?>
 
 <a href="<?php echo wc_get_cart_url(); ?>" class="m-cart" title="<?php _e('View your shopping cart', 'woothemes'); ?>">
-    <?= file_get_contents($theme_uri .  '/assets/img/icons/cart.svg'); ?>
+    <?= file_get_contents($theme_uri .  '/dist/img/icons/cart.svg'); ?>
     <?php if ($woocommerce->cart->cart_contents_count > 0) : ?>
         <span class="m-cart-badge"><?=  $woocommerce->cart->cart_contents_count; ?></span>
     <?php endif; ?>
