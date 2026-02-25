@@ -16,7 +16,7 @@
 
                     <div class="m-header-search JS__header-search">
                         <div class="m-header-search__body">
-                            <button class="m-search-button reset-button JS__header-openSearch">
+                            <button class="m-search-button JS__header-openSearch">
                                 <?php echo file_get_contents(
                                 	$theme_uri . '/assets/img/icons/search.svg',
                                 ); ?>
@@ -24,9 +24,9 @@
                             
                             <form role="search" method="get" action="/" class="m-header-search__form">
                                 <input class="m-input-search" type="text" name="s" value="<?php echo get_search_query(); ?>" placeholder="Buscar">
-                                <button class="m-search-button reset-button" type="submit" aria-label="Pesquisar termo">
+                                <button class="m-search-button" type="submit" aria-label="Pesquisar termo">
                                     <?php echo file_get_contents(
-                                    	$theme_uri . '/assets/imgicons/search.svg',
+                                    	$theme_uri . '/assets/img/icons/search.svg',
                                     ); ?>
                                 </button>
                                 <span class="m-search-close" title="Fechar busca">
@@ -40,7 +40,7 @@
                             <a href="<?php echo home_url(); ?>/minha-conta">
                                 <div class="icon account">
                                     <?php echo file_get_contents(
-                                    	$theme_uri . '/assets/imgicons/account.svg',
+                                    	$theme_uri . '/assets/img/icons/account.svg',
                                     ); ?>
                                 </div>
                             </a>

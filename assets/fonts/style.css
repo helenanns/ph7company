@@ -1,0 +1,23 @@
+@font-face {
+  font-display: swap; 
+  font-family: 'Oxygen';
+  font-style: normal;
+  font-weight: 300;
+  src: url('oxygen/Oxygen-Light.woff2') format('woff2'); 
+}
+
+@font-face {
+  font-display: swap; 
+  font-family: 'Oxygen';
+  font-style: normal;
+  font-weight: 400;
+  src: url('oxygen/Oxygen-Regular.woff2') format('woff2'); 
+}
+
+@font-face {
+  font-display: swap; 
+  font-family: 'Oxygen';
+  font-style: normal;
+  font-weight: 600;
+  src: url('oxygen/Oxygen-Bold.woff2') format('woff2');
+}

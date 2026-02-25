@@ -23,7 +23,7 @@ endif;
                         <li>
                             <a href="<?php echo $instagram; ?>" target="_blank">
                                 <?php echo file_get_contents(
-                                	$theme_uri . '/assets/imgicons/instagram.svg',
+                                	$theme_uri . '/assets/img/icons/instagram.svg',
                                 ); ?>
                             </a>
                         </li>
@@ -32,7 +32,7 @@ endif;
                         <li>
                             <a href="<?php echo $facebook; ?>" target="_blank">
                                 <?php echo file_get_contents(
-                                	$theme_uri . '/assets/imgicons/facebook.svg',
+                                	$theme_uri . '/assets/img/icons/facebook.svg',
                                 ); ?>
                             </a>
                         </li>
@@ -41,7 +41,7 @@ endif;
                         <li>
                             <a href="https://wa.me/<?php echo $whatsapp; ?>" target="_blank">
                                 <?php echo file_get_contents(
-                                	$theme_uri . '/assets/imgicons/whatsapp.svg',
+                                	$theme_uri . '/assets/img/icons/whatsapp.svg',
                                 ); ?>
                             </a>
                         </li>
@@ -72,7 +72,7 @@ endif;
                 <?php if ($phone): ?>
                     <li>
                         <?php echo file_get_contents(
-                        	$theme_uri . '/assets/imgicons/whatsapp.svg',
+                        	$theme_uri . '/assets/img/icons/whatsapp.svg',
                         ); ?>
                         <a href="wa.me/<?php echo $whatsapp; ?>" target="_blank">
                             +55 <?php echo $phone; ?>
@@ -82,14 +82,14 @@ endif;
 
                 <?php if ($email): ?>
                     <li class="mail">
-                        <?php echo file_get_contents($theme_uri . '/assets/imgicons/email.svg'); ?>
+                        <?php echo file_get_contents($theme_uri . '/assets/img/icons/email.svg'); ?>
                         <a href="mailto:<?php echo $email; ?>" target="_blank">
                             <?php echo $email; ?>
                         </a>
                     </li>
                 <?php endif; ?>
                     <li>
-                        <?php echo file_get_contents($theme_uri . '/assets/imgicons/clock.svg'); ?>
+                        <?php echo file_get_contents($theme_uri . '/assets/img/icons/clock.svg'); ?>
                         <span>seg. à sex. das 09h às 18h</span>
                     </li>
                 </ul>
@@ -99,44 +99,44 @@ endif;
                 <span class="title">Formas de Pagamento</span>
                 <ul>
                     <li>
-                        <img src="<?= $theme_uri ?>/assets/imgpayments/visa.svg" alt="Visa"  width="" height="">
+                        <img src="<?= $theme_uri ?>/assets/img/payments/visa.svg" alt="Visa"  width="" height="">
                     </li>
                     <li>
-                        <img src="<?= $theme_uri ?>/assets/imgpayments/mastercard.png" alt="Mastercard"  width="" height="">
+                        <img src="<?= $theme_uri ?>/assets/img/payments/mastercard.png" alt="Mastercard"  width="" height="">
                     </li>
                     <li>
-                        <img src="<?= $theme_uri ?>/assets/imgpayments/american-express.svg" alt="American Express"  width="" height="">
+                        <img src="<?= $theme_uri ?>/assets/img/payments/american-express.svg" alt="American Express"  width="" height="">
                     </li>
                     <li>
-                        <img src="<?= $theme_uri ?>/assets/imgpayments/discover.png" alt="Discovery"  width="" height="">
+                        <img src="<?= $theme_uri ?>/assets/img/payments/discover.png" alt="Discovery"  width="" height="">
                     </li>
                     <li>
-                        <img src="<?= $theme_uri ?>/assets/imgpayments/elo.svg" alt="Elo"  width="" height="">
+                        <img src="<?= $theme_uri ?>/assets/img/payments/elo.svg" alt="Elo"  width="" height="">
                     </li>
                     <li>
-                        <img src="<?= $theme_uri ?>/assets/imgpayments/aura.png" alt="Aura"  width="" height="">
+                        <img src="<?= $theme_uri ?>/assets/img/payments/aura.png" alt="Aura"  width="" height="">
                     </li>
                     <li>
-                        <img src="<?= $theme_uri ?>/assets/imgpayments/jcb.png" alt="JCB"  width="" height="">
+                        <img src="<?= $theme_uri ?>/assets/img/payments/jcb.png" alt="JCB"  width="" height="">
                     </li>
                     <li>
-                        <img src="<?= $theme_uri ?>/assets/imgpayments/hipercard.svg" alt="Hipercard"  width="" height="">
+                        <img src="<?= $theme_uri ?>/assets/img/payments/hipercard.svg" alt="Hipercard"  width="" height="">
                     </li>
                     <li>
-                        <img src="<?= $theme_uri ?>/assets/imgpayments/hiper.png" alt="Hiper"  width="" height="">
+                        <img src="<?= $theme_uri ?>/assets/img/payments/hiper.png" alt="Hiper"  width="" height="">
                     </li>
                     <li>
-                        <img src="<?= $theme_uri ?>/assets/imgpayments/pix.svg" alt="Pix"  width="" height="">
+                        <img src="<?= $theme_uri ?>/assets/img/payments/pix.svg" alt="Pix"  width="" height="">
                     </li>
                 </ul>
 
                 <span class="title">Formas de envio</span>
                 <ul class="payments">
                     <li>
-                        <img src="<?= $theme_uri ?>/assets/imgpayments/pac.png" alt="Visa"  width="" height="">
+                        <img src="<?= $theme_uri ?>/assets/img/payments/pac.png" alt="Visa"  width="" height="">
                     </li>
                     <li>
-                        <img src="<?= $theme_uri ?>/assets/imgpayments/sedex.png" alt="Mastercard"  width="" height="">
+                        <img src="<?= $theme_uri ?>/assets/img/payments/sedex.png" alt="Mastercard"  width="" height="">
                     </li>
                 </ul>  
             </div>
@@ -156,7 +156,7 @@ endif;
 
 
     <a class="m-whatsapp" href="https://wa.me/<?php echo $whatsapp; ?>" target="_blank" title="Whatsapp" data-action="click" data-category="whatsapp" data-label="Whatsapp Flutuante" data-value="">
-        <img src="<?= $theme_uri ?>/assets/imgicons/whatsapp-white.svg" width="34" height="34" alt="Whatsapp">
+        <img src="<?= $theme_uri ?>/assets/img/icons/whatsapp-white.svg" width="34" height="34" alt="Whatsapp">
     </a>
 
 </section>

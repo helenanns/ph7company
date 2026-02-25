@@ -1,5 +1,5 @@
-@use "./rem";
-@use "./opacity";
+@forward "./rem";
+@forward "./opacity";
 
 @mixin reset-ul {
 	margin: 0;
