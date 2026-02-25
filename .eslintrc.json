@@ -1,11 +1,10 @@
 {
-  "ignorePatterns": ["assets/**/*.js"],
+  "ignorePatterns": ["dist/**/*.js"],
   "env": {
     "browser": true,
     "es2021": true
   },
   "extends": [
-    "airbnb-base",
     "plugin:@wordpress/eslint-plugin/recommended",
     "plugin:prettier/recommended"
   ],

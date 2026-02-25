@@ -1,19 +1,10 @@
-@import "./resets";
+@use "../_variables/breakpoints" as *;
 
 .hide {
 	display: none !important;
 }
 
-.overflow-hidden {
-	overflow: hidden;
-}
-
-.position-relative {
-	position: relative;
-}
-
 .desktop-none {
-
 	@media (min-width: $size-desktop) {
 		display: none;
 	}

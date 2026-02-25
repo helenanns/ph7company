@@ -6,30 +6,22 @@
     <ul class="m-share__wrapper">
         <li>
             <a href="">
-                <?php echo file_get_contents(
-                    $theme_uri . '/assets/img/icons/instagram.svg'
-                ); ?>
+                <?php echo file_get_contents($theme_uri . '/assets/imgicons/instagram.svg'); ?>
             </a>
         </li>
         <li>
             <a href="">
-                <?php echo file_get_contents(
-                    $theme_uri . '/assets/img/icons/twitter.svg'
-                ); ?>
+                <?php echo file_get_contents($theme_uri . '/assets/imgicons/twitter.svg'); ?>
             </a>
         </li>
         <li>
             <a href="">
-                <?php echo file_get_contents(
-                    $theme_uri . '/assets/img/icons/whatsapp.svg'
-                ); ?>
+                <?php echo file_get_contents($theme_uri . '/assets/imgicons/whatsapp.svg'); ?>
             </a>
         </li>
         <li>
             <a href="">
-                <?php echo file_get_contents(
-                    $theme_uri . '/assets/img/icons/instagram.svg'
-                ); ?>
+                <?php echo file_get_contents($theme_uri . '/assets/imgicons/instagram.svg'); ?>
             </a>
         </li>
     </ul>

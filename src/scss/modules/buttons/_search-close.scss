@@ -1,3 +1,5 @@
+@use "../../base/imports" as *;
+
 .m-search-close {
 	right: 0 !important;
 	left: auto !important;
@@ -10,7 +12,7 @@
 	visibility: hidden;
 	transition: 0.4s;
 	position: absolute;
-	color: opacity($white, 0.4);
+	color: set-alpha($white, 0.4);
 
 	width: 40px;
 	height: 2px;

@@ -1,113 +1,165 @@
 <?php
+/**
+ * Vite integration (DEV + PROD) for WordPress theme
+ * - DEV: loads @vite/client + entry from dev server (HMR + React Refresh)
+ * - PROD: loads files from dist/.vite/manifest.json and enqueues CSS automatically
+ */
 
-function custom_js()
+function vite_is_dev()
 {
-	global $theme_uri;
-	$post_type = get_post_type();
-	$json_versions = file_get_contents("{$theme_uri}/assets/assets.json");
-	$versions = json_decode($json_versions, true);
-
-	if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
-		// $mainJS = "{$theme_uri}/assets/js/{$versions['main.js']}";
-		$mainJS = "{$theme_uri}/assets/js/main.js";
-		wp_register_script('main', $mainJS, [], array());
-		wp_enqueue_script('main');
-
-		$vendorJS = "{$theme_uri}/assets/js/{$versions['vendor.js']}";
-		wp_register_script('vendor', $vendorJS, [], array());
-		wp_enqueue_script('vendor');
+	$fp = @fsockopen('127.0.0.1', 5173, $errno, $errstr, 0.2);
+	if ($fp) {
+		fclose($fp);
+		return true;
 	}
-
-	if (is_page_template('template-homepage.php')) {
-        $homeJS = '/assets/js/home.js';
-        wp_register_script('home', $theme_uri . $homeJS, array());
-        wp_enqueue_script('home');
-    }
-
-	if (is_singular('product')) {
-        $productJS = '/assets/js/single-product.js';
-        wp_register_script('single-product', $theme_uri . $productJS, array());
-        wp_enqueue_script('single-product');
-    }
+	return false;
 }
-add_action('wp_footer', 'custom_js');
 
-
-function custom_css()
+function vite_dev_server()
 {
-	global $theme_uri;
-	$post_type = get_post_type();
-	$json_versions = file_get_contents("{$theme_uri}/assets/assets.json");
-	$versions = json_decode($json_versions, true);
+	return 'http://127.0.0.1:5173';
+}
 
-	if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
-		$vendorCSS = '/assets/css/vendor.css';
-        wp_register_style('vendor-css', $theme_uri . $vendorCSS, [], $versions);
-        wp_enqueue_style('vendor-css');
+function vite_manifest()
+{
+	$path = get_template_directory() . '/dist/manifest.json';
 
-		$mainCSS = "{$theme_uri}/assets/css/main.css";
-		wp_register_style('main-css', $mainCSS, [], $versions);
-		wp_enqueue_style('main-css');
-		
-		$gotham = "{$theme_uri}/assets/fonts/gotham/gotham.css";
-		wp_register_style('gotham', $gotham, [], null);
-		wp_enqueue_style('gotham');
+	return file_exists($path) ? json_decode(file_get_contents($path), true) : null;
+}
 
-		$oxygen = "https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap";
-		wp_register_style('oxygen', $oxygen, [], null);
-		wp_enqueue_style('oxygen');
+function vite_enqueue_entry($handle, $entry, $in_footer = true)
+{
+	// DEV MODE (Vite server)
+	if (vite_is_dev()) {
+		// HMR client (only once)
+		if (!wp_script_is('vite-client', 'enqueued')) {
+			wp_enqueue_script('vite-client', vite_dev_server() . '/@vite/client', [], null, false);
+		}
 
-	$font = "https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap	";
-		wp_register_style('font', $font, [], null);
-		wp_enqueue_style('font');
+		// Entry JS (served by Vite)
+		wp_enqueue_script($handle, vite_dev_server() . '/' . ltrim($entry, '/'), [], null, $in_footer);
+
+		return;
 	}
 
+	// PROD MODE (manifest)
+	$manifest = vite_manifest();
+	if (!$manifest || !isset($manifest[$entry])) {
+		return;
+	}
+
+	$asset = $manifest[$entry];
+
+	// JS file
+	if (!empty($asset['file'])) {
+		wp_enqueue_script(
+			$handle,
+			get_template_directory_uri() . '/dist/' . $asset['file'],
+			[],
+			null,
+			$in_footer,
+		);
+	}
+
+	// CSS files linked to this entry
+	if (!empty($asset['css']) && is_array($asset['css'])) {
+		foreach ($asset['css'] as $i => $css) {
+			wp_enqueue_style(
+				$handle . '-css-' . $i,
+				get_template_directory_uri() . '/dist/' . $css,
+				[],
+				null,
+			);
+		}
+	}
+}
+
+/**
+ * FRONTEND ASSETS
+ */
+add_action('wp_enqueue_scripts', function () {
+	if (is_admin()) {
+		return;
+	}
+
+	// MAIN (global)
+	vite_enqueue_entry('theme-main', 'src/js/main.js');
+
+	// FONTS (external)
+	wp_enqueue_style(
+		'oxygen',
+		'https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap',
+	);
+	wp_enqueue_style(
+		'font',
+		'https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap',
+	);
+
+	// HOME
 	if (is_page_template('template-homepage.php')) {
-        $home = '/assets/css/home.css';
-        wp_register_style('home-css', $theme_uri . $home, [], $versions);
-        wp_enqueue_style('home-css');
-    }
+		vite_enqueue_entry('theme-home', 'src/js/home.js');
+	}
 
+	// WOOCOMMERCE PRODUCT
 	if (is_singular('product')) {
-        $product = '/assets/css/single-product.css';
-        wp_register_style('single-product-css', $theme_uri . $product, [], null);
-        wp_enqueue_style('single-product-css');
-    }
+		vite_enqueue_entry('theme-product', 'src/js/single-product.js');
+	}
 
+	// SINGLE (post / about template)
 	if (is_single() || is_page_template('template-about.php')) {
-        $page = '/assets/css/single.css';
-        wp_register_style('page-css', $theme_uri . $page, [], $versions);
-        wp_enqueue_style('page-css');
-    }
-
-	if (is_page() ) {
-        $page = '/assets/css/page.css';
-        wp_register_style('page-css', $theme_uri . $page, [], null);
-        wp_enqueue_style('page-css');
-    }
-
-	if (is_home() ) {
-        $page = '/assets/css/blog.css';
-        wp_register_style('blog-css', $theme_uri . $page, [], '1.0.0');
-        wp_enqueue_style('blog-css');
-    }
-
-	if ( is_account_page() ) {
-    $page = '/assets/css/account.css';
-    wp_register_style(
-        'account-css',
-        $theme_uri . $page,
-        [],
-        '1.0.0'
-    );
-    wp_enqueue_style('account-css');
+		vite_enqueue_entry('theme-single', 'src/js/single.js');
 	}
 
+	// PAGE
+	if (is_page()) {
+		vite_enqueue_entry('theme-page', 'src/js/page.js');
+	}
+
+	// BLOG (posts index)
+	if (is_home()) {
+		vite_enqueue_entry('theme-blog', 'src/js/blog.js');
+	}
+
+	// ACCOUNT (WooCommerce)
+	if (function_exists('is_account_page') && is_account_page()) {
+		vite_enqueue_entry('theme-account', 'src/js/account.js');
+	}
+
+	// CART (WooCommerce)
 	if (function_exists('is_cart') && is_cart()) {
-		$page = '/assets/css/cart.css';
-		wp_register_style('cart-css', $theme_uri . $page, [], '1.0.0');
-		wp_enqueue_style('cart-css');
+		vite_enqueue_entry('theme-cart', 'src/js/cart.js');
 	}
-}
-add_action('wp_enqueue_scripts', 'custom_css');
+});
 
+/**
+ * GUTENBERG / BLOCK EDITOR ASSETS
+ * (React blocks bundle)
+ */
+add_action('enqueue_block_editor_assets', function () {
+	vite_enqueue_entry('theme-blocks', 'src/blocks/index.jsx', true);
+});
+
+add_filter(
+	'script_loader_tag',
+	function ($tag, $handle, $src) {
+		$module_handles = [
+			'vite-client',
+			'theme-main',
+			'theme-home',
+			'theme-product',
+			'theme-single',
+			'theme-page',
+			'theme-blog',
+			'theme-account',
+			'theme-cart',
+			'theme-blocks',
+		];
+
+		if (in_array($handle, $module_handles, true)) {
+			return '<script type="module" src="' . esc_url($src) . '"></script>';
+		}
+		return $tag;
+	},
+	10,
+	3,
+);

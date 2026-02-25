@@ -1,7 +1,6 @@
-@import "./base/imports";
-@import "./modules/woocommerce/woocommerce-message";
-@import "./modules/woocommerce/woocommerce-breadcrumb";
-
+@use "./base/imports" as *;
+@use "./modules/woocommerce/woocommerce-message";
+@use "./modules/woocommerce/woocommerce-breadcrumb";
 
 $gray: #e5e5e5;
 $gray-medium: #ccc;
@@ -11,9 +10,7 @@ $gray-medium: #ccc;
 }
 
 .woocommerce-account {
-
 	.woocommerce {
-
 		@media (min-width: $size-desktop) {
 			display: flex;
 			justify-content: space-between;
@@ -85,7 +82,6 @@ $gray-medium: #ccc;
      ============================== */
 
 	.woocommerce-MyAccount-content {
-
 		p {
 			font-size: 14px;
 			line-height: 1.7;
@@ -203,7 +199,6 @@ $gray-medium: #ccc;
      ============================== */
 
 	@media (min-width: 992px) {
-
 		.woocommerce-MyAccount-navigation {
 			width: 25%;
 			margin-bottom: 0;

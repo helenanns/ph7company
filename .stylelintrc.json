@@ -1,6 +1,6 @@
 {
-  "extends": "stylelint-config-wordpress/scss",
-  "ignoreFiles": ["assets/**/*.css"],
+  "extends": ["@wordpress/stylelint-config/scss"],
+  "ignoreFiles": ["dist/**/*.css"],
   "rules": {
     "selector-class-pattern": null,
     "no-descending-specificity": null,

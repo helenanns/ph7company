@@ -2,8 +2,8 @@
 /** Template Name: Homepage */
 get_header();
 
-$fields = get_fields();
-$products = @$fields['products'];
+$fields = function_exists('get_fields') ? get_fields(get_the_ID()) : [];
+$products = $fields['products'] ?? [];
 ?>
 
 

@@ -2,6 +2,9 @@
 global $theme_uri;
 $theme_uri = get_template_directory_uri();
 
+// ACF Fields
+include('includes/functions/acf.php');
+
 // Set Head Content
 include('includes/functions/set-head-content.php');
 
@@ -10,9 +13,6 @@ include 'includes/functions/post-types.php';
 
 // Ajax
 include 'includes/functions/ajax.php';
-
-// ACF Fields
-include('includes/functions/acf.php');
 
 // image size
 include 'includes/functions/image-size.php';
@@ -33,4 +33,3 @@ include 'includes/functions/blocks.php';
 include 'includes/functions/menu.php';
 
 include 'includes/functions/woocommerce.php';
-

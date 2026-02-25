@@ -1,10 +1,7 @@
-// Base:
-@import "./base/imports";
+@use "./base/imports" as *;
 
 .woocommerce-cart .l-page {
-
 	.container {
-
 		.woocommerce {
 			display: flex;
 			flex-wrap: wrap;
@@ -22,7 +19,6 @@
 			.woocommerce-cart-form {
 				background: #f1f1f1f1;
 			}
-
 		}
 	}
 
@@ -60,15 +56,14 @@
 		}
 	}
 
-
 	.checkout-button {
 		display: inline-block;
 		text-decoration: none;
 		cursor: pointer;
 		color: $white;
-		background-color: opacity($black, 1);
+		background-color: $black;
 		text-transform: uppercase;
-		font-size: rem(14px);
+		font-size: to-rem(14px);
 		line-height: 1.2;
 		font-family: $font-secondary;
 		font-weight: 600;

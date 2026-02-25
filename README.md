@@ -6,7 +6,7 @@ This repository contains the custom WordPress theme used by PH7 Company for its 
 
 ## 📦 Project Structure
 
-- `assets/` – compiled files (CSS, JS, images, fonts).
+- `dist/` – compiled files (CSS, JS, images, fonts).
 - `includes/` – PHP functions, ACF integrations, WooCommerce logic, etc.
 - `src/` – source Sass/JS used by Gulp.
 - `template-parts/` – reusable theme fragments.
@@ -26,7 +26,8 @@ This repository contains the custom WordPress theme used by PH7 Company for its 
 | ESLint     | 8.x                             | Airbnb + WordPress config             |
 | StyleLint  | 13.x                            | WordPress-based rules                 |
 | Husky / lint-staged | 7.x / 12.x             | pre-commit linting/formatting         |
-| jQuery, Plyr, Swiper, Select2, normalize.css, etc. | listed in `dependencies`        |
+| JavaScript | vanilla ES modules | no jQuery dependency                               |
+| Plyr, Swiper, Select2, normalize.css, etc.  | listed in `dependencies`        |
 
 ---
 
@@ -65,6 +66,6 @@ This repository contains the custom WordPress theme used by PH7 Company for its 
 - **`npm run lint`** – runs ESLint on `src/js`.
 - **`npm run lint:fix`** – auto-fixes lint issues.
 
-Styles are located in `src/scss` and JavaScript in `src/js`. Gulp compiles everything into `assets/css` and `assets/js`.
+Styles are located in `src/scss` and JavaScript in `src/js`. Gulp compiles everything into `dist/css` and `dist/js`.
 
 Before committing, Husky + lint-staged will automatically run linters and formatters on staged files.
