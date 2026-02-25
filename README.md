@@ -1,4 +1,4 @@
-# Tema PH7-Company
+# PH7 Company Theme
 
 This repository contains the custom WordPress theme used by PH7 Company for its WooCommerce store. It includes a modern development setup with Gulp, Babel, ESLint, StyleLint, Prettier, and other tools to streamline the workflow and ensure code quality.
 
