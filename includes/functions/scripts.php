@@ -31,12 +31,10 @@ function vite_enqueue_entry($handle, $entry, $in_footer = true)
 {
 	// DEV MODE (Vite server)
 	if (vite_is_dev()) {
-		// HMR client (only once)
 		if (!wp_script_is('vite-client', 'enqueued')) {
 			wp_enqueue_script('vite-client', vite_dev_server() . '/@vite/client', [], null, false);
 		}
 
-		// Entry JS (served by Vite)
 		wp_enqueue_script($handle, vite_dev_server() . '/' . ltrim($entry, '/'), [], null, $in_footer);
 
 		return;
@@ -50,7 +48,6 @@ function vite_enqueue_entry($handle, $entry, $in_footer = true)
 
 	$asset = $manifest[$entry];
 
-	// JS file
 	if (!empty($asset['file'])) {
 		wp_enqueue_script(
 			$handle,
@@ -61,7 +58,6 @@ function vite_enqueue_entry($handle, $entry, $in_footer = true)
 		);
 	}
 
-	// CSS files linked to this entry
 	if (!empty($asset['css']) && is_array($asset['css'])) {
 		foreach ($asset['css'] as $i => $css) {
 			wp_enqueue_style(
@@ -74,58 +70,45 @@ function vite_enqueue_entry($handle, $entry, $in_footer = true)
 	}
 }
 
-/**
- * FRONTEND ASSETS
- */
+
 add_action('wp_enqueue_scripts', function () {
 	if (is_admin()) {
 		return;
 	}
 
-	// MAIN (global)
 	vite_enqueue_entry('theme-main', 'src/js/main.js');
 
-	// FONTS (external)
 	wp_enqueue_style(
-		'oxygen',
-		'https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap',
-	);
-	wp_enqueue_style(
-		'font',
-		'https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap',
+		'theme-fonts-local',
+		get_template_directory_uri() . '/assets/fonts/style.css',
+		[],
+		null,
 	);
 
-	// HOME
 	if (is_page_template('template-homepage.php')) {
 		vite_enqueue_entry('theme-home', 'src/js/home.js');
 	}
 
-	// WOOCOMMERCE PRODUCT
 	if (is_singular('product')) {
 		vite_enqueue_entry('theme-product', 'src/js/single-product.js');
 	}
 
-	// SINGLE (post / about template)
 	if (is_single() || is_page_template('template-about.php')) {
 		vite_enqueue_entry('theme-single', 'src/js/single.js');
 	}
 
-	// PAGE
 	if (is_page()) {
 		vite_enqueue_entry('theme-page', 'src/js/page.js');
 	}
 
-	// BLOG (posts index)
 	if (is_home()) {
 		vite_enqueue_entry('theme-blog', 'src/js/blog.js');
 	}
 
-	// ACCOUNT (WooCommerce)
 	if (function_exists('is_account_page') && is_account_page()) {
 		vite_enqueue_entry('theme-account', 'src/js/account.js');
 	}
 
-	// CART (WooCommerce)
 	if (function_exists('is_cart') && is_cart()) {
 		vite_enqueue_entry('theme-cart', 'src/js/cart.js');
 	}

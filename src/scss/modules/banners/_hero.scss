@@ -3,7 +3,7 @@
 .m-banner-hero {
 	overflow: hidden;
 	position: relative;
-	font-family: $font-primary;
+	font-family: $font-secondary;
 	aspect-ratio: 0.8465;
 
 	@media (min-width: $size-desktop) {
@@ -109,7 +109,6 @@
 
 		.subtitle {
 			display: block;
-			// font-family: $font-secondary;
 			font-size: to-rem(14px);
 			font-weight: 600;
 			margin-bottom: 16px;

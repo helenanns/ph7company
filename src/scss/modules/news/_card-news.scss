@@ -2,7 +2,6 @@
 
 .m-card-news {
 	height: 100%;
-	font-family: $font-secondary;
 	overflow: hidden;
 
 	a {
@@ -51,7 +50,6 @@
 			font-size: to-rem(24px);
 			line-height: 1.4;
 			font-weight: 600;
-			font-family: $font-primary;
 		}
 
 		p {

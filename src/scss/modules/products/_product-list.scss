@@ -85,14 +85,12 @@
 
 	.m-products-header {
 		margin-bottom: 24px;
-		font-family: $font-secondary;
 
 		@media (min-width: $size-desktop) {
 			margin-bottom: 27px;
 		}
 
 		h2 {
-			font-family: $font-secondary;
 			margin-bottom: 0;
 			font-size: to-rem(19px);
 			line-height: 1;

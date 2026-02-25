@@ -14,7 +14,6 @@
 
 	.m-footer__content {
 		padding: 40px 0 28px;
-		font-family: $font-secondary;
 		line-height: 1.5;
 		font-size: to-rem(13px);
 
@@ -30,7 +29,6 @@
 
 		a {
 			text-decoration: none;
-			font-family: $font-secondary;
 			font-weight: 400;
 			transition: 0.15s ease;
 			position: relative;
@@ -98,7 +96,6 @@
 
 		.title {
 			display: block;
-			font-family: $font-secondary;
 			font-weight: 600;
 			margin-bottom: 18px;
 			letter-spacing: 0;
@@ -151,7 +148,6 @@
 		font-size: to-rem(11px);
 		line-height: 1;
 		background: set-alpha($black, 0.1);
-		font-family: $font-secondary;
 		text-align: center;
 
 		.container {

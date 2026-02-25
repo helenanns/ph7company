@@ -1,7 +1,6 @@
 @use "../../base/imports" as *;
 
 .m-card-product {
-	font-family: $font-secondary;
 	text-align: center;
 	overflow: hidden;
 	border-radius: 2px;
@@ -77,14 +76,12 @@
 	}
 
 	.m-card-outofstock {
-		font-family: $font-secondary;
 		height: 20px;
 		font-size: to-rem(13px);
 		font-weight: 600;
 	}
 
 	.m-card__price-value {
-		font-family: $font-secondary;
 		height: 16px;
 		font-size: to-rem(16px);
 		font-weight: 500;
@@ -115,7 +112,6 @@
 		line-height: 1.23;
 		letter-spacing: -0.5px;
 		margin: 0 0 11px;
-		font-family: $font-secondary;
 		font-weight: 600;
 		text-transform: uppercase;
 	}

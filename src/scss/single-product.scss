@@ -7,7 +7,6 @@
 .l-product {
 	padding-top: 12px;
 	padding-bottom: 14px;
-	font-family: $font-secondary;
 
 	.product {
 		@media (min-width: $size-desktop) {
@@ -37,7 +36,6 @@
 		.product_title {
 			font-size: to-rem(28px);
 			line-height: 1.1;
-			font-family: $font-secondary;
 			margin-bottom: 14px;
 		}
 
