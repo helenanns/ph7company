@@ -1,4 +1,4 @@
-# Tema PH7-Company
+# PH7 Company Theme
 
 This repository contains the custom WordPress theme used by PH7 Company for its WooCommerce store. Assets are built with Vite and the development workflow uses modern tooling (ESLint, Stylelint, Prettier, Vitest, Husky, etc.) to ensure quality and fast iteration.
 
