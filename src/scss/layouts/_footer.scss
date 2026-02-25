@@ -1,3 +1,5 @@
+@use "../base/imports" as *;
+
 .m-footer {
 	background: #dee6e8;
 	color: #000;
@@ -14,7 +16,7 @@
 		padding: 40px 0 28px;
 		font-family: $font-secondary;
 		line-height: 1.5;
-		font-size: rem(13px);
+		font-size: to-rem(13px);
 
 		@media (min-width: $size-desktop) {
 			padding: 55px 0 49px;
@@ -53,7 +55,6 @@
 		}
 
 		.logo-wrapper {
-
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -101,7 +102,7 @@
 			font-weight: 600;
 			margin-bottom: 18px;
 			letter-spacing: 0;
-			font-size: rem(16px);
+			font-size: to-rem(16px);
 		}
 
 		.m-footer__menu {
@@ -118,7 +119,6 @@
 			}
 		}
 	}
-
 
 	.m-footer__social {
 		display: flex;
@@ -146,12 +146,11 @@
 		}
 	}
 
-
 	.m-footer-copyright {
 		padding: 12px 0;
-		font-size: rem(11px);
+		font-size: to-rem(11px);
 		line-height: 1;
-		background: opacity($black, 0.1);
+		background: set-alpha($black, 0.1);
 		font-family: $font-secondary;
 		text-align: center;
 
@@ -173,7 +172,6 @@
 	}
 
 	.payments {
-
 		.title {
 			display: none;
 		}
@@ -184,7 +182,6 @@
 			gap: 14px;
 			justify-content: center;
 			align-items: center;
-
 
 			@media (min-width: $size-desktop) {
 				max-width: 220px;
@@ -206,7 +203,6 @@
 			}
 		}
 	}
-
 }
 
 .m-whatsapp {

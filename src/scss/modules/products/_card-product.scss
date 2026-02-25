@@ -1,3 +1,5 @@
+@use "../../base/imports" as *;
+
 .m-card-product {
 	font-family: $font-secondary;
 	text-align: center;
@@ -5,7 +7,6 @@
 	border-radius: 2px;
 
 	&.outofstock {
-
 		.m-card__img::after {
 			display: block;
 			content: "";
@@ -28,7 +29,7 @@
 		line-height: 1.5;
 		padding: 0 11px;
 		padding: 1px 10px;
-		font-size: rem(11px);
+		font-size: to-rem(11px);
 		border-radius: 3px;
 		font-weight: 500;
 	}
@@ -49,7 +50,9 @@
 			object-fit: cover;
 			top: 0;
 			left: 0;
-			transition: opacity 0.3s ease-in, transform 0.3s ease;
+			transition:
+				opacity 0.3s ease-in,
+				transform 0.3s ease;
 			backface-visibility: hidden;
 			will-change: transform;
 
@@ -60,7 +63,6 @@
 	}
 
 	&:hover {
-
 		.m-card__img img:first-of-type {
 			opacity: 0;
 		}
@@ -77,21 +79,21 @@
 	.m-card-outofstock {
 		font-family: $font-secondary;
 		height: 20px;
-		font-size: rem(13px);
+		font-size: to-rem(13px);
 		font-weight: 600;
 	}
 
 	.m-card__price-value {
 		font-family: $font-secondary;
 		height: 16px;
-		font-size: rem(16px);
+		font-size: to-rem(16px);
 		font-weight: 500;
 		line-height: 1;
 		letter-spacing: -0.5px;
 		color: $blue;
 
 		.old-price {
-			font-size: rem(14px);
+			font-size: to-rem(14px);
 			font-weight: 400;
 			letter-spacing: -0.5px;
 			margin-right: 5px;
@@ -103,13 +105,13 @@
 	}
 
 	a {
-		color: opacity($black, 0.8);
+		color: set-alpha($black, 0.8);
 		text-decoration: none;
 		font-weight: 300;
 	}
 
 	.m-title {
-		font-size: rem(13px);
+		font-size: to-rem(13px);
 		line-height: 1.23;
 		letter-spacing: -0.5px;
 		margin: 0 0 11px;

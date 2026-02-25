@@ -1,4 +1,5 @@
-@import "./card-news";
+@use "../../base/imports" as *;
+@use "./card-news";
 
 .m-news {
 	padding-top: 32px;
@@ -20,7 +21,7 @@
 		h2 {
 			font-family: $font-secondary;
 			margin-bottom: 0;
-			font-size: rem(26px);
+			font-size: to-rem(26px);
 			line-height: 1;
 			font-weight: 600;
 			text-align: center;
@@ -29,7 +30,6 @@
 	}
 
 	.m-news-list {
-
 		@include reset-ul;
 		display: grid;
 		row-gap: 24px;
