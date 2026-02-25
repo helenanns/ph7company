@@ -1,7 +1,4 @@
-// Base:
-@import "./base/imports";
-@import "./modules/banners/hero";
-@import "./modules/products/product-list";
-@import "./modules/news/news-list";
-@import "./modules/grid-icons";
-
+@use "./modules/banners/hero";
+@use "./modules/products/product-list";
+@use "./modules/news/news-list";
+@use "./modules/grid-icons";

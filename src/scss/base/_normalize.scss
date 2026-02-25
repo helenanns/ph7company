@@ -1,8 +1,11 @@
-@import "./_fonts/all";
-@import "./_vendor/all";
+@use "./imports" as *;
 
 * {
 	box-sizing: border-box;
+}
+
+input:-internal-autofill-selected {
+	background: transparent;
 }
 
 ::selection {

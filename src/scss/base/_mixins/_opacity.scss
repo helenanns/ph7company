@@ -1,13 +1,9 @@
-@function opacity($color, $opacity) {
+@use "sass:color";
 
+@function set-alpha($color, $opacity: 1) {
 	@if $opacity < 0 or $opacity > 1 {
 		$opacity: 1;
 	}
 
-	$red:   red($color);
-	$green: green($color);
-	$blue:  blue($color);
-
-	@return rgba($red, $green, $blue, $opacity);
+	@return color.change($color, $alpha: $opacity);
 }
-

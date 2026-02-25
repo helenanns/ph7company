@@ -1,3 +1,5 @@
+@use "../../base/imports" as *;
+
 .woocommerce-breadcrumb {
 	margin: 0 0 16px;
 	color: $black;
@@ -6,7 +8,7 @@
 	align-items: center;
 	max-width: 1380px;
 	font-family: $font-secondary;
-	font-size: rem(11px);
+	font-size: to-rem(11px);
 	gap: 4px;
 
 	@media (min-width: $size-desktop-large) {

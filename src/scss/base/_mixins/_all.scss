@@ -1,6 +1,5 @@
-@import "./rem";
-@import "./opacity";
-
+@use "./rem";
+@use "./opacity";
 
 @mixin reset-ul {
 	margin: 0;

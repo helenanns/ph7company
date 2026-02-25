@@ -1,13 +1,10 @@
-// Base:
-@import "./base/imports";
-@import "plyr/src/sass/plyr";
-@import "./modules/banners/banner-single";
-@import "./modules/share";
-
+@use "./base/imports" as *;
+@use "./modules/banners/banner-single";
+@use "./modules/share";
 
 .l-single {
 	padding-bottom: 60px;
-	font-size: rem(14px);
+	font-size: to-rem(14px);
 	line-height: 1.5;
 
 	h1,
@@ -20,7 +17,7 @@
 
 	h1 {
 		text-transform: uppercase;
-		font-size: rem(48px);
+		font-size: to-rem(48px);
 		line-height: 1;
 		font-family: $font-primary;
 		text-align: center;
@@ -30,7 +27,7 @@
 
 	h2,
 	h3 {
-		font-size: rem(18px);
+		font-size: to-rem(18px);
 		line-height: 1.5;
 		margin: 2em 0 1em;
 	}
@@ -79,5 +76,4 @@
 		float: right;
 		margin-left: 3em;
 	}
-
 }

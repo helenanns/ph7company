@@ -1,17 +1,11 @@
-@import url(https://fonts.cdnfonts.com/css/kepler-std-3?styles=45481,45427,45458,45472,45480,45487);
-@import "normalize.css/normalize.css";
-@import "swiper/css";
-@import "select2/dist/css/select2.css";
-@import "base/imports";
-@import "base/base";
+@use "./base/normalize";
 
 // Layouts:
-@import "./layouts/header";
-@import "./layouts/footer";
-@import "./layouts/container";
-@import "./layouts/section-title";
-
+@use "./layouts/header";
+@use "./layouts/footer";
+@use "./layouts/container";
+@use "./layouts/section-title";
 
 // Modules
-@import "./modules/cart";
-@import "./modules/buttons/all";
+@use "./modules/cart";
+@use "./modules/buttons/all";

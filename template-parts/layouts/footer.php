@@ -5,8 +5,9 @@ $facebook = get_field('facebook', 'options');
 $instagram = get_field('instagram', 'options');
 $phone = get_field('whatsapp', 'options');
 
-if($phone) : $whatsapp = preg_replace('/[^0-9]/', '', $phone); endif;
-
+if ($phone):
+	$whatsapp = preg_replace('/[^0-9]/', '', $phone);
+endif;
 ?>
 
 <section class="m-footer">
@@ -15,36 +16,36 @@ if($phone) : $whatsapp = preg_replace('/[^0-9]/', '', $phone); endif;
         <div class="container">
 
             <div class="logo-wrapper">
-                <img src="<?= $theme_uri ?>/dist/img/logo-footer.png" width="153" height="108" alt="PH7 Company" class="logo">
+                <img src="<?= $theme_uri ?>/assets/img/logo-footer.png" width="153" height="108" alt="PH7 Company" class="logo">
 
                 <ul class="m-footer__social">
-                    <?php if ($instagram) : ?>
+                    <?php if ($instagram): ?>
                         <li>
-                            <a href="<?php echo $instagram;?>" target="_blank">
+                            <a href="<?php echo $instagram; ?>" target="_blank">
                                 <?php echo file_get_contents(
-                                    $theme_uri . '/dist/img/icons/instagram.svg'
+                                	$theme_uri . '/assets/imgicons/instagram.svg',
                                 ); ?>
                             </a>
                         </li>
-                    <?php endif;?>
-                    <?php if ($facebook) : ?>
+                    <?php endif; ?>
+                    <?php if ($facebook): ?>
                         <li>
-                            <a href="<?php echo $facebook;?>" target="_blank">
+                            <a href="<?php echo $facebook; ?>" target="_blank">
                                 <?php echo file_get_contents(
-                                    $theme_uri . '/dist/img/icons/facebook.svg'
+                                	$theme_uri . '/assets/imgicons/facebook.svg',
                                 ); ?>
                             </a>
                         </li>
-                    <?php endif;?>
-                    <?php if ($whatsapp) : ?>
+                    <?php endif; ?>
+                    <?php if ($whatsapp): ?>
                         <li>
-                            <a href="https://wa.me/<?php echo $whatsapp;?>" target="_blank">
+                            <a href="https://wa.me/<?php echo $whatsapp; ?>" target="_blank">
                                 <?php echo file_get_contents(
-                                    $theme_uri . '/dist/img/icons/whatsapp.svg'
+                                	$theme_uri . '/assets/imgicons/whatsapp.svg',
                                 ); ?>
                             </a>
                         </li>
-                    <?php endif;?>
+                    <?php endif; ?>
                 </ul>
                     
             </div>
@@ -52,41 +53,43 @@ if($phone) : $whatsapp = preg_replace('/[^0-9]/', '', $phone); endif;
             <div>
                 <span class="title">Navegue</span>
                 <?php wp_nav_menu([
-                        'theme_location' => 'footer',
-                        'menu_class' => 'm-footer__menu',
+                	'theme_location' => 'footer',
+                	'menu_class' => 'm-footer__menu',
                 ]); ?>
             </div>
 
             <div>
                 <span class="title">Institucional</span>
                 <?php wp_nav_menu([
-                        'theme_location' => 'footer-nav',
-                        'menu_class' => 'm-footer__menu',
+                	'theme_location' => 'footer-nav',
+                	'menu_class' => 'm-footer__menu',
                 ]); ?>
             </div>
 
             <div>
                 <span class="title">Fale Conosco</span>
                 <ul class="m-footer__menu">
-                <?php if($phone) : ?>
+                <?php if ($phone): ?>
                     <li>
-                        <?php echo file_get_contents( $theme_uri . '/dist/img/icons/whatsapp.svg');?>
+                        <?php echo file_get_contents(
+                        	$theme_uri . '/assets/imgicons/whatsapp.svg',
+                        ); ?>
                         <a href="wa.me/<?php echo $whatsapp; ?>" target="_blank">
                             +55 <?php echo $phone; ?>
                         </a>
                     </li>
                 <?php endif; ?>
 
-                <?php if($email) : ?>
+                <?php if ($email): ?>
                     <li class="mail">
-                        <?php echo file_get_contents( $theme_uri . '/dist/img/icons/email.svg');?>
+                        <?php echo file_get_contents($theme_uri . '/assets/imgicons/email.svg'); ?>
                         <a href="mailto:<?php echo $email; ?>" target="_blank">
                             <?php echo $email; ?>
                         </a>
                     </li>
                 <?php endif; ?>
                     <li>
-                        <?php echo file_get_contents( $theme_uri . '/dist/img/icons/clock.svg');?>
+                        <?php echo file_get_contents($theme_uri . '/assets/imgicons/clock.svg'); ?>
                         <span>seg. à sex. das 09h às 18h</span>
                     </li>
                 </ul>
@@ -96,44 +99,44 @@ if($phone) : $whatsapp = preg_replace('/[^0-9]/', '', $phone); endif;
                 <span class="title">Formas de Pagamento</span>
                 <ul>
                     <li>
-                        <img src="<?= $theme_uri ?>/dist/img/payments/visa.svg" alt="Visa"  width="" height="">
+                        <img src="<?= $theme_uri ?>/assets/imgpayments/visa.svg" alt="Visa"  width="" height="">
                     </li>
                     <li>
-                        <img src="<?= $theme_uri ?>/dist/img/payments/mastercard.png" alt="Mastercard"  width="" height="">
+                        <img src="<?= $theme_uri ?>/assets/imgpayments/mastercard.png" alt="Mastercard"  width="" height="">
                     </li>
                     <li>
-                        <img src="<?= $theme_uri ?>/dist/img/payments/american-express.svg" alt="American Express"  width="" height="">
+                        <img src="<?= $theme_uri ?>/assets/imgpayments/american-express.svg" alt="American Express"  width="" height="">
                     </li>
                     <li>
-                        <img src="<?= $theme_uri ?>/dist/img/payments/discover.png" alt="Discovery"  width="" height="">
+                        <img src="<?= $theme_uri ?>/assets/imgpayments/discover.png" alt="Discovery"  width="" height="">
                     </li>
                     <li>
-                        <img src="<?= $theme_uri ?>/dist/img/payments/elo.svg" alt="Elo"  width="" height="">
+                        <img src="<?= $theme_uri ?>/assets/imgpayments/elo.svg" alt="Elo"  width="" height="">
                     </li>
                     <li>
-                        <img src="<?= $theme_uri ?>/dist/img/payments/aura.png" alt="Aura"  width="" height="">
+                        <img src="<?= $theme_uri ?>/assets/imgpayments/aura.png" alt="Aura"  width="" height="">
                     </li>
                     <li>
-                        <img src="<?= $theme_uri ?>/dist/img/payments/jcb.png" alt="JCB"  width="" height="">
+                        <img src="<?= $theme_uri ?>/assets/imgpayments/jcb.png" alt="JCB"  width="" height="">
                     </li>
                     <li>
-                        <img src="<?= $theme_uri ?>/dist/img/payments/hipercard.svg" alt="Hipercard"  width="" height="">
+                        <img src="<?= $theme_uri ?>/assets/imgpayments/hipercard.svg" alt="Hipercard"  width="" height="">
                     </li>
                     <li>
-                        <img src="<?= $theme_uri ?>/dist/img/payments/hiper.png" alt="Hiper"  width="" height="">
+                        <img src="<?= $theme_uri ?>/assets/imgpayments/hiper.png" alt="Hiper"  width="" height="">
                     </li>
                     <li>
-                        <img src="<?= $theme_uri ?>/dist/img/payments/pix.svg" alt="Pix"  width="" height="">
+                        <img src="<?= $theme_uri ?>/assets/imgpayments/pix.svg" alt="Pix"  width="" height="">
                     </li>
                 </ul>
 
                 <span class="title">Formas de envio</span>
                 <ul class="payments">
                     <li>
-                        <img src="<?= $theme_uri ?>/dist/img/payments/pac.png" alt="Visa"  width="" height="">
+                        <img src="<?= $theme_uri ?>/assets/imgpayments/pac.png" alt="Visa"  width="" height="">
                     </li>
                     <li>
-                        <img src="<?= $theme_uri ?>/dist/img/payments/sedex.png" alt="Mastercard"  width="" height="">
+                        <img src="<?= $theme_uri ?>/assets/imgpayments/sedex.png" alt="Mastercard"  width="" height="">
                     </li>
                 </ul>  
             </div>
@@ -144,14 +147,16 @@ if($phone) : $whatsapp = preg_replace('/[^0-9]/', '', $phone); endif;
     <section class="m-footer-copyright">
         <div class="container">
             <span>
-                <span class="registrado">®</span> <?php echo date('Y'); ?>, PH7 Company. <b>CNPJ:</b> 35.865.044/0001-69
+                <span class="registrado">®</span> <?php echo date(
+                	'Y',
+                ); ?>, PH7 Company. <b>CNPJ:</b> 35.865.044/0001-69
             </span>
         </div>
     </section>
 
 
-    <a class="m-whatsapp" href="https://wa.me/<?php echo $whatsapp;?>" target="_blank" title="Whatsapp" data-action="click" data-category="whatsapp" data-label="Whatsapp Flutuante" data-value="">
-        <img src="<?= $theme_uri ?>/dist/img/icons/whatsapp-white.svg" width="34" height="34" alt="Whatsapp">
+    <a class="m-whatsapp" href="https://wa.me/<?php echo $whatsapp; ?>" target="_blank" title="Whatsapp" data-action="click" data-category="whatsapp" data-label="Whatsapp Flutuante" data-value="">
+        <img src="<?= $theme_uri ?>/assets/imgicons/whatsapp-white.svg" width="34" height="34" alt="Whatsapp">
     </a>
 
 </section>

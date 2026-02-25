@@ -5,11 +5,11 @@
  * @param $posttype => Nome do post type
  * @param $ppp => Post por página
  */
-function simple_query($posttype, $ppp)
-{
-	$args_post = [
-		'post_type' => $posttype,
-		'posts_per_page' => $ppp,
+	function simple_query($posttype, $ppp)
+	{
+		$args_post = [
+			'post_type' => $posttype,
+			'posts_per_page' => $ppp,
 		'post_status' => 'publish',
 	];
 

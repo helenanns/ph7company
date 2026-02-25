@@ -1,3 +1,5 @@
+@use "../base/imports" as *;
+
 .m-cart {
 	display: flex;
 	text-decoration: none;
@@ -19,7 +21,7 @@
 		justify-content: center;
 		color: $black;
 		background-color: $white;
-		font-size: rem(10px);
+		font-size: to-rem(10px);
 		font-weight: 600;
 		line-height: 0;
 		border-radius: 100%;

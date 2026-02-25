@@ -1,10 +1,12 @@
+@use "../base/imports" as *;
+
 .m-share {
 	display: flex;
 	justify-content: center;
 	margin: 32px 0 0;
 
 	.m-share__title {
-		font-size: rem(14px);
+		font-size: to-rem(14px);
 		font-weight: 600;
 	}
 

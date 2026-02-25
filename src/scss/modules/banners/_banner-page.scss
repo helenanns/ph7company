@@ -1,5 +1,5 @@
-@import "../breadcrumb";
-
+@use "../../base/imports" as *;
+@use "../breadcrumb";
 
 :root {
 	--plyr-color-main: #e5208b;
@@ -16,13 +16,12 @@
 	}
 
 	.container {
-
 		@media (max-width: $size-desktop) {
 			max-width: 782px;
 		}
 
 		h1 {
-			font-size: rem(52px);
+			font-size: to-rem(52px);
 			margin-bottom: 0;
 			margin-top: 50px;
 		}
@@ -35,7 +34,6 @@
 			color: $white;
 		}
 	}
-
 }
 
 .m-single-banner-thumbnail {
@@ -97,7 +95,7 @@
 
 		.plyr__control--overlaid {
 			border-radius: 0;
-			background: opacity($black, 0.6);
+			background: set-alpha($black, 0.6);
 			display: block;
 			padding: 0;
 			top: 0;
@@ -114,7 +112,7 @@
 			}
 
 			&:hover {
-				background: opacity($black, 0.6);
+				background: set-alpha($black, 0.6);
 			}
 
 			&::after {
@@ -126,13 +124,11 @@
 				bottom: 0;
 				right: 0;
 				margin: auto;
-				background-image: url(../img/icons/play-video.svg);
 				background-position: center;
 				background-repeat: no-repeat;
 				height: 37px;
 				width: 36px;
 			}
-
 		}
 
 		.plyr--paused .plyr__controls {

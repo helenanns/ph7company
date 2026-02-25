@@ -1,7 +1,8 @@
-@import "./base/imports";
-@import "./modules/products/product-list";
-@import "./modules/woocommerce/woocommerce-message";
-@import "./modules/woocommerce/woocommerce-breadcrumb";
+@use "./base/imports" as *;
+@use "./modules/products/product-list";
+@use "./modules/woocommerce/woocommerce-message";
+@use "./modules/woocommerce/woocommerce-breadcrumb";
+@use "./modules/woocommerce/woo-variation-swatches";
 
 .l-product {
 	padding-top: 12px;
@@ -9,9 +10,7 @@
 	font-family: $font-secondary;
 
 	.product {
-
 		@media (min-width: $size-desktop) {
-
 			display: grid;
 			grid-template-columns: 1fr 1fr;
 			grid-template-rows: auto auto;
@@ -23,12 +22,12 @@
 		}
 	}
 
-	.onsale { // "oferta"
+	.onsale {
+		// "oferta"
 		display: none;
 	}
 
 	.summary {
-
 		@media (min-width: $size-desktop) {
 			padding-top: 19px;
 			padding-left: 20px;
@@ -36,16 +35,14 @@
 		}
 
 		.product_title {
-			font-size: rem(28px);
+			font-size: to-rem(28px);
 			line-height: 1.1;
 			font-family: $font-secondary;
 			margin-bottom: 14px;
 		}
 
-		@import "./modules/woocommerce/woo-variation-swatches";
-
 		.price {
-			font-size: rem(29px);
+			font-size: to-rem(29px);
 			line-height: 1;
 			margin: 0;
 			font-weight: 400;
@@ -107,7 +104,6 @@
 			max-width: 510px;
 
 			.swiper-wrapper {
-
 				@media (min-width: $size-desktop) {
 					position: absolute;
 					top: 0;
@@ -216,25 +212,24 @@
 			margin-bottom: 28px;
 
 			.active {
-
 				a {
-					color: opacity($black, 1);
+					color: $black;
 				}
 				border-bottom: 2px solid $black;
 			}
 
 			a {
-				color: opacity($black, 0.5);
+				color: set-alpha($black, 0.5);
 				text-decoration: none;
 				text-transform: uppercase;
 				font-weight: 600;
-				font-size: rem(20px);
+				font-size: to-rem(20px);
 				letter-spacing: -0.05em;
 			}
 		}
 
 		.panel {
-			font-size: rem(14px);
+			font-size: to-rem(14px);
 			line-height: 1.5;
 
 			h2 {
@@ -244,12 +239,11 @@
 	}
 
 	.m-products {
-
 		@media (min-width: $size-desktop) {
 			padding-top: 81px;
 
 			h2 {
-				font-size: rem(22px);
+				font-size: to-rem(22px);
 			}
 		}
 	}

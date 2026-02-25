@@ -1,7 +1,6 @@
 // Base:
-@import "./base/imports";
-@import "./modules/banners/hero";
-@import "./modules/news/news-list";
-@import "./modules/grid-icons";
-@import "./modules/pagination";
-
+@use "./base/imports" as *;
+@use "./modules/banners/hero";
+@use "./modules/news/news-list";
+@use "./modules/grid-icons";
+@use "./modules/pagination";

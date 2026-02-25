@@ -8,7 +8,7 @@
 
                 <a href="<?= home_url() ?>" class="m-header__main__logo" title="Voltar para a Home">
                     <picture>
-                        <img src="<?= $theme_uri ?>/dist/img/logo.png" width="73" height="71" alt="PH7 Company">
+                        <img src="<?= $theme_uri ?>/assets/img/logo.png" width="73" height="71" alt="PH7 Company">
                     </picture>
                 </a>
                 
@@ -18,7 +18,7 @@
                         <div class="m-header-search__body">
                             <button class="m-search-button reset-button JS__header-openSearch">
                                 <?php echo file_get_contents(
-                                    $theme_uri . '/dist/img/icons/search.svg'
+                                	$theme_uri . '/assets/img/icons/search.svg',
                                 ); ?>
                             </button>
                             
@@ -26,7 +26,7 @@
                                 <input class="m-input-search" type="text" name="s" value="<?php echo get_search_query(); ?>" placeholder="Buscar">
                                 <button class="m-search-button reset-button" type="submit" aria-label="Pesquisar termo">
                                     <?php echo file_get_contents(
-                                        $theme_uri . '/dist/img/icons/search.svg'
+                                    	$theme_uri . '/assets/imgicons/search.svg',
                                     ); ?>
                                 </button>
                                 <span class="m-search-close" title="Fechar busca">
@@ -40,14 +40,18 @@
                             <a href="<?php echo home_url(); ?>/minha-conta">
                                 <div class="icon account">
                                     <?php echo file_get_contents(
-                                        $theme_uri . '/dist/img/icons/account.svg'
+                                    	$theme_uri . '/assets/imgicons/account.svg',
                                     ); ?>
                                 </div>
                             </a>
                         </li>
                         <li>
                             <div class="icon">
-                                <?php get_template_part('/template-parts/modules/cart', 'cart', []); ?>
+                                <?php get_template_part(
+                                	'/template-parts/modules/cart',
+                                	'cart',
+                                	[],
+                                ); ?>
                             </div>
                         </li>
                     </ul>
@@ -62,8 +66,8 @@
         <section class="m-header__menu JS__header-menu">
             <div class="container">
                 <?php wp_nav_menu([
-                    'menu' => 'header',
-                    'menu_class' => 'm-header__menu__nav',
+                	'menu' => 'header',
+                	'menu_class' => 'm-header__menu__nav',
                 ]); ?>
             </div>
         </section>

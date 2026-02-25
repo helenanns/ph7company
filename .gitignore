@@ -17,9 +17,7 @@ wp-content/plugins/hello.php
 #   files under src/ live in the repo.
 #   Paths are relative to this theme's root.
 # -----------------------------------------------------------------------------
-dist/css/
-dist/js/
-dist/fonts/
+dist/
 
 # if you ever want to keep some files in assets, list them as !dist/path
 # e.g. !dist/img/keep.svg
