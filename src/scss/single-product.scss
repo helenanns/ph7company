@@ -1,18 +1,22 @@
 @use "./base/imports" as *;
+
 @use "./modules/products/product-list";
 @use "./modules/woocommerce/woocommerce-message";
 @use "./modules/woocommerce/woocommerce-breadcrumb";
 @use "./modules/woocommerce/woo-variation-swatches";
 
-.l-product {
-	padding-top: 12px;
-	padding-bottom: 14px;
+@use "./layouts/single-product/summary";
+@use "./layouts/single-product/gallery";
+@use "./layouts/single-product/tabs";
+@use "./layouts/single-product/related";
 
+.l-product {
 	.product {
 		@media (min-width: $size-desktop) {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
 			grid-template-rows: auto auto;
+			margin-top: 40px;
 
 			.m-products,
 			.woocommerce-tabs {
@@ -22,227 +26,6 @@
 	}
 
 	.onsale {
-		// "oferta"
 		display: none;
-	}
-
-	.summary {
-		@media (min-width: $size-desktop) {
-			padding-top: 19px;
-			padding-left: 20px;
-			max-width: 397px;
-		}
-
-		.product_title {
-			font-size: to-rem(28px);
-			line-height: 1.1;
-			margin-bottom: 14px;
-		}
-
-		.price {
-			font-size: to-rem(29px);
-			line-height: 1;
-			margin: 0;
-			font-weight: 400;
-			letter-spacing: -0.05em;
-
-			ins {
-				text-decoration: none;
-			}
-		}
-
-		#wc-shipping-sim {
-			border: 0;
-			font-size: 1rem;
-		}
-
-		#wc-shipping-sim-form-title {
-			margin: 0 2px 12px;
-			text-transform: uppercase;
-			font-size: 12px;
-
-			strong {
-				font-weight: 600;
-			}
-		}
-
-		.woocommerce-product-details__short-description {
-			font-size: 1rem;
-			line-height: 1.5;
-		}
-
-		.m-button {
-			width: 100%;
-			padding: 1.15rem;
-			margin: 1.8rem 0;
-		}
-
-		.product_meta {
-			display: none;
-		}
-	}
-
-	.l-product-gallery {
-		width: 100%;
-
-		@media (min-width: $size-desktop) {
-			display: flex;
-			flex-direction: row-reverse;
-			gap: 20px;
-		}
-
-		.woocommerce-product-gallery__trigger {
-			display: none;
-		}
-
-		.l-product-gallery__images {
-			width: 100%;
-			aspect-ratio: 4 / 5;
-			overflow: hidden;
-			max-width: 510px;
-
-			.swiper-wrapper {
-				@media (min-width: $size-desktop) {
-					position: absolute;
-					top: 0;
-				}
-			}
-
-			img {
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-				object-position: center;
-			}
-		}
-
-		.l-product-gallery__thumbs {
-			margin-top: 10px;
-			overflow: hidden;
-			position: relative;
-
-			.swiper {
-				height: 100%;
-			}
-
-			@media (min-width: $size-desktop) {
-				width: 74px;
-				min-width: 74px;
-				margin: 0;
-			}
-
-			.swiper-slide {
-				height: 0;
-				padding-bottom: calc(100% / 5);
-				cursor: pointer;
-				opacity: 0.5;
-				overflow: hidden;
-
-				&.swiper-slide-thumb-active {
-					opacity: 1;
-				}
-
-				@media (min-width: $size-desktop) {
-					padding-bottom: 0;
-					height: 74px !important;
-					width: 100%;
-				}
-
-				&:last-of-type {
-					margin-bottom: 0 !important;
-				}
-
-				img {
-					height: 100%;
-					width: 100%;
-					position: absolute;
-					object-fit: cover;
-				}
-			}
-
-			.swiper-button-prev {
-				top: 0;
-				transform: rotate(90deg);
-				left: 0;
-				right: 0;
-				margin: 0 auto;
-				bottom: 0 !important;
-
-				&::after {
-					color: #000;
-				}
-			}
-
-			.swiper-button-next {
-				bottom: 0;
-				transform: rotate(90deg);
-				left: 0;
-				right: 0;
-				margin: 0 auto;
-
-				&::after {
-					color: #000;
-				}
-			}
-
-			.swiper-button-prev,
-			.swiper-button-next {
-				font-size: 14px;
-
-				&::after {
-					font-size: 26px;
-				}
-			}
-		}
-	}
-
-	.woocommerce-tabs {
-		display: none;
-		margin-top: 26px;
-		width: 100%;
-		margin-left: auto;
-		margin-right: auto;
-
-		.tabs {
-			display: flex;
-			gap: 30px;
-			padding-top: 10px;
-			margin-bottom: 28px;
-
-			.active {
-				a {
-					color: $black;
-				}
-				border-bottom: 2px solid $black;
-			}
-
-			a {
-				color: set-alpha($black, 0.5);
-				text-decoration: none;
-				text-transform: uppercase;
-				font-weight: 600;
-				font-size: to-rem(20px);
-				letter-spacing: -0.05em;
-			}
-		}
-
-		.panel {
-			font-size: to-rem(14px);
-			line-height: 1.5;
-
-			h2 {
-				display: none;
-			}
-		}
-	}
-
-	.m-products {
-		@media (min-width: $size-desktop) {
-			padding-top: 81px;
-
-			h2 {
-				font-size: to-rem(22px);
-			}
-		}
 	}
 }

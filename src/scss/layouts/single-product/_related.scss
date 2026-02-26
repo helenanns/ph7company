@@ -1,0 +1,13 @@
+@use "../../base/imports" as *;
+
+.l-product {
+  .m-products {
+    @media (min-width: $size-desktop) {
+      padding-top: 81px;
+
+      h2 {
+        font-size: to-rem(22px);
+      }
+    }
+  }
+}

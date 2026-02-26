@@ -2,24 +2,19 @@
 
 .woocommerce-breadcrumb {
 	margin: 0 0 16px;
-	color: $black;
-	height: 20px;
+	color: set-alpha($black, 0.5);
 	display: flex;
 	align-items: center;
 	max-width: 1380px;
 	font-size: to-rem(11px);
 	gap: 4px;
+	padding: 20px 0;
 
 	@media (min-width: $size-desktop-large) {
 		max-width: 1680px;
 	}
 
 	a {
-		color: $blue;
-		text-decoration: none;
-
-		&:first-of-type {
-			font-weight: 600;
-		}
+		color: set-alpha($black, 0.5);
 	}
 }

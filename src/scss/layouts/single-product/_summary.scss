@@ -1,0 +1,65 @@
+@use "../../base/imports" as *;
+
+.l-product .summary {
+	.product_title {
+		font-size: to-rem(28px);
+		line-height: 1.1;
+		margin-bottom: 14px;
+	}
+
+	.price {
+		font-size: to-rem(29px);
+		line-height: 1;
+		margin: 0;
+		font-weight: 400;
+		letter-spacing: -0.05em;
+
+		ins {
+			text-decoration: none;
+		}
+	}
+
+	form.cart {
+		display: flex;
+
+		.quantity {
+			display: flex;
+			border: 1px solid #000;
+			gap: 20px;
+
+			input {
+				border: 0;
+				text-align: center;
+			}
+			button {
+				background-color: transparent;
+				border: 0;
+			}
+		}
+
+		.m-button {
+			width: 100%;
+			padding: 1.15rem;
+		}
+	}
+
+	#wc-shipping-sim {
+		border: 0;
+		font-size: 1rem;
+	}
+
+	#wc-shipping-sim-form-title {
+		margin: 0 2px 12px;
+		text-transform: uppercase;
+		font-size: 12px;
+
+		strong {
+			font-weight: 600;
+		}
+	}
+
+	.woocommerce-product-details__short-description {
+		font-size: 1rem;
+		line-height: 1.5;
+	}
+}

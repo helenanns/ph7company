@@ -1,18 +1,18 @@
 <?php global $theme_uri; ?>
 
 <header class="m-header is-fixed">
-    <div class="m-header__wrapper">
+    <div class="m-header-wrapper">
 
-        <section class="m-header__main">
+        <section class="m-header-main">
             <div class="container">
 
-                <a href="<?= home_url() ?>" class="m-header__main__logo" title="Voltar para a Home">
+                <a href="<?= home_url() ?>" class="m-header-main__logo" title="Voltar para a Home">
                     <picture>
                         <img src="<?= $theme_uri ?>/assets/img/logo.png" width="73" height="71" alt="PH7 Company">
                     </picture>
                 </a>
                 
-                <div class="m-header__main__wrapper">
+                <div class="m-header-main__wrapper">
 
                     <div class="m-header-search JS__header-search">
                         <div class="m-header-search__body">
@@ -35,7 +35,7 @@
                         </div>
                     </div>
 
-                    <ul class="m-header__main__icons">
+                    <ul class="m-header-main__icons">
                         <li>
                             <a href="<?php echo home_url(); ?>/minha-conta">
                                 <div class="icon account">
@@ -63,11 +63,11 @@
             </div>
         </section>
 
-        <section class="m-header__menu JS__header-menu">
+        <section class="m-header-menu JS__header-menu">
             <div class="container">
                 <?php wp_nav_menu([
                 	'menu' => 'header',
-                	'menu_class' => 'm-header__menu__nav',
+                	'menu_class' => 'm-header-menu__nav',
                 ]); ?>
             </div>
         </section>

@@ -16,7 +16,6 @@
 	font-weight: 500;
 	max-height: 65px;
 	backdrop-filter: blur(10px);
-	// border-bottom: 1px solid rgb(245 245 245);
 
 	&.active {
 		max-height: 100vh;
@@ -24,26 +23,25 @@
 
 	@media (min-width: $size-desktop) {
 		background-color: set-alpha(#000, 0.8);
-		// filter: drop-shadow(0rem 0.625rem 0.625rem rgba(0, 0, 0, 0.5));
+		position: sticky;
 		backdrop-filter: blur(1.5625rem);
 		background-color: #000;
 		max-height: none;
 		transition: 0.35s ease;
-		position: sticky;
+		height: 62px;
+		display: flex;
 
-		.m-header__wrapper {
+		.m-header-wrapper {
 			display: flex;
 			align-items: center;
 			width: 100%;
 			margin: 0 auto;
-			height: 60px;
 			padding: 0 34px;
-
-			max-width: calc(1183px + 20px);
+			max-width: 1240px;
 		}
 	}
 
-	.m-header__main {
+	.m-header-main {
 		height: 100%;
 		width: 100%;
 		position: relative;
@@ -72,7 +70,9 @@
 			}
 		}
 
-		.m-header__main__logo {
+		.m-header-main__logo {
+			outline: none;
+
 			@media (min-width: $size-desktop) {
 				position: absolute;
 				left: 0;
@@ -97,12 +97,12 @@
 			}
 		}
 
-		.m-header__main__wrapper {
+		.m-header-main__wrapper {
 			display: flex;
 			align-items: center;
 		}
 
-		.m-header__main__icons {
+		.m-header-main__icons {
 			display: flex;
 			align-items: center;
 			gap: 8px;
@@ -133,7 +133,7 @@
 		}
 	}
 
-	.m-header__menu {
+	.m-header-menu {
 		opacity: 0;
 		transition: opacity 0.2s ease-in-out;
 		background-color: set-alpha(#000, 0.7);
@@ -185,7 +185,7 @@
 			}
 		}
 
-		.m-header__menu__nav {
+		.m-header-menu__nav {
 			@media (min-width: $size-desktop) {
 				display: flex;
 				gap: 30px;
@@ -372,7 +372,7 @@
 				margin: 0;
 				transition: 0.4s;
 				background: transparent;
-    		border: 0;
+				border: 0;
 				padding: 0;
 				cursor: pointer;
 
