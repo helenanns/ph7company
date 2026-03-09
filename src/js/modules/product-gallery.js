@@ -6,21 +6,19 @@ const productThumbnail = () => {
 		modules: [Navigation],
 		spaceBetween: 20,
 		slidesPerView: 6,
-		freeMode: true,
-		watchSlidesProgress: true,
+		// watchSlidesProgress: true,
 		navigation: {
 			nextEl: '.JS__product-thumbs .swiper-button-next',
 			prevEl: '.JS__product-thumbs .swiper-button-prev',
 		},
 		breakpoints: {
-			1280: {
+			1024: {
 				direction: 'vertical',
 			},
 		},
 	});
 
 	const productSwiper = new Swiper('.JS__product-images', {
-		// eslint-disable-line no-unused-vars
 		modules: [Thumbs],
 		slidesPerView: 1,
 		thumbs: {

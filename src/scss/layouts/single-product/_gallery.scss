@@ -1,117 +1,149 @@
 @use "../../base/imports" as *;
 
-.l-product {
-  .l-product-gallery {
-    width: 100%;
+.l-product-gallery {
+	width: 100%;
+	position: relative;
 
-    @media (min-width: $size-desktop) {
-      display: flex;
-      flex-direction: row-reverse;
-      gap: 20px;
-    }
+	@media (min-width: $size-desktop) {
+		display: flex;
+		flex-direction: row-reverse;
+		gap: 20px;
 
-    .woocommerce-product-gallery__trigger {
-      display: none;
-    }
+		&:hover {
+			.woocommerce-product-gallery__trigger {
+				opacity: 1;
+			}
+		}
+	}
 
-    .l-product-gallery__images {
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      overflow: hidden;
-      max-width: 510px;
+	.woocommerce-product-gallery__trigger {
+		position: absolute;
+		background: #fff;
+		z-index: 40;
+		border-radius: 50%;
+		height: 38px;
+		width: 38px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		box-shadow: 0 2px 10px #00000026;
+		right: 11px;
+		top: 9px;
+		opacity: 0;
+	}
 
-      .swiper-wrapper {
-        @media (min-width: $size-desktop) {
-          position: absolute;
-          top: 0;
-        }
-      }
+	.l-product-gallery__images {
+		width: 100%;
+		aspect-ratio: 4 / 5;
+		overflow: hidden;
 
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-      }
-    }
+		@media (min-width: $size-desktop) {
+			width: calc(100% - 94px);
+			aspect-ratio: 4 / 5;
+			overflow: hidden;
+			margin: 0 0 0 auto;
+		}
 
-    .l-product-gallery__thumbs {
-      margin-top: 10px;
-      overflow: hidden;
-      position: relative;
+		.swiper-wrapper {
+			@media (min-width: $size-desktop) {
+				position: absolute;
+				top: 0;
+			}
+		}
 
-      .swiper {
-        height: 100%;
-      }
+		img {
+			width: 100% !important;
+			height: 100% !important;
+			object-fit: cover;
+			object-position: center;
+			top: 0 !important;
+			left: 0 !important;
+		}
 
-      @media (min-width: $size-desktop) {
-        width: 74px;
-        min-width: 74px;
-        margin: 0;
-      }
+		a {
+			cursor: inherit;
+		}
+	}
 
-      .swiper-slide {
-        height: 0;
-        padding-bottom: calc(100% / 5);
-        cursor: pointer;
-        opacity: 0.5;
-        overflow: hidden;
+	.l-product-gallery__thumbs {
+		margin-top: 10px;
+		overflow: hidden;
+		position: relative;
 
-        &.swiper-slide-thumb-active {
-          opacity: 1;
-        }
+		.swiper {
+			height: 100%;
+		}
 
-        @media (min-width: $size-desktop) {
-          padding-bottom: 0;
-          height: 74px !important;
-          width: 100%;
-        }
+		@media (min-width: $size-desktop) {
+			width: 74px;
+			min-width: 74px;
+			margin: 0;
+			position: absolute;
+			left: 0;
+			height: 100%;
+		}
 
-        &:last-of-type {
-          margin-bottom: 0 !important;
-        }
+		.swiper-slide {
+			height: 0;
+			padding-bottom: calc(100% / 5);
+			cursor: pointer;
+			opacity: 0.5;
+			overflow: hidden;
 
-        img {
-          height: 100%;
-          width: 100%;
-          position: absolute;
-          object-fit: cover;
-        }
-      }
+			&.swiper-slide-thumb-active {
+				opacity: 1;
+			}
 
-      .swiper-button-prev {
-        top: 0;
-        transform: rotate(90deg);
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-        bottom: 0 !important;
+			@media (min-width: $size-desktop) {
+				padding-bottom: 0;
+				height: 74px !important;
+				width: 100%;
+			}
 
-        &::after {
-          color: #000;
-        }
-      }
+			&:last-of-type {
+				margin-bottom: 0 !important;
+			}
 
-      .swiper-button-next {
-        bottom: 0;
-        transform: rotate(90deg);
-        left: 0;
-        right: 0;
-        margin: 0 auto;
+			img {
+				height: 100%;
+				width: 100%;
+				position: absolute;
+				object-fit: cover;
+			}
+		}
 
-        &::after {
-          color: #000;
-        }
-      }
+		.swiper-button-prev {
+			top: 0;
+			transform: rotate(90deg);
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			bottom: 0 !important;
 
-      .swiper-button-prev,
-      .swiper-button-next {
-        font-size: 14px;
+			&::after {
+				color: #000;
+			}
+		}
 
-        &::after {
-          font-size: 26px;
-        }
-      }
-    }
-  }
+		.swiper-button-next {
+			bottom: 0;
+			transform: rotate(90deg);
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+
+			&::after {
+				color: #000;
+			}
+		}
+
+		.swiper-button-prev,
+		.swiper-button-next {
+			font-size: 14px;
+
+			&::after {
+				font-size: 26px;
+			}
+		}
+	}
 }

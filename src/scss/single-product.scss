@@ -11,21 +11,18 @@
 @use "./layouts/single-product/related";
 
 .l-product {
-	.product {
+	.l-product-wrapper {
 		@media (min-width: $size-desktop) {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			grid-template-rows: auto auto;
-			margin-top: 40px;
-
-			.m-products,
-			.woocommerce-tabs {
-				grid-column: span 2;
-			}
+			display: flex;
+			gap: 40px;
 		}
 	}
+}
 
-	.onsale {
-		display: none;
-	}
+.reset_variations,
+.woocommerce-product-gallery__trigger,
+.onsale,
+.woocommerce-tabs,
+.product_meta {
+	display: none;
 }
