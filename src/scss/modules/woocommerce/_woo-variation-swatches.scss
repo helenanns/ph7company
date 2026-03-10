@@ -2,7 +2,7 @@
 	margin-bottom: 28px;
 
 	label {
-		margin: 0;
+		margin: 0 1px 5px !important;
 		text-transform: uppercase;
 		font-weight: 600;
 		font-size: 12px;
@@ -27,8 +27,24 @@
 		font-size: to-rem(14px);
 		line-height: 1;
 	}
+
+	[data-microtip-position]::before,
+	[data-microtip-position]::after,
+	[data-wvstooltip]::before,
+	[data-wvstooltip]::after,
+	[data-title]::before,
+	[data-title]::after {
+		display: none !important;
+	}
+
+	.woo-variation-swatches-tooltip,
+	.tooltip,
+	.wvs-tooltip {
+		display: none !important;
+	}
 }
 
-.reset_variations {
-	display: none;
+.reset_variations,
+.woo-selected-variation-item-name {
+	display: none!important;
 }

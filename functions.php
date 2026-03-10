@@ -33,3 +33,4 @@ include 'includes/functions/blocks.php';
 include 'includes/functions/menu.php';
 
 include 'includes/functions/woocommerce.php';
+include 'includes/functions/side-cart.php';
