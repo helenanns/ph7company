@@ -50,10 +50,6 @@ $gray-medium: #ccc;
 			border-top: 1px solid $gray;
 		}
 
-		li {
-			border-bottom: 1px solid $gray;
-		}
-
 		a {
 			display: flex;
 			align-items: center;
@@ -75,6 +71,30 @@ $gray-medium: #ccc;
 			color: $blue;
 			font-weight: 700;
 		}
+	}
+
+	.woocommerce-MyAccount-navigation-link {
+		border-bottom: 1px solid $gray;
+		position: relative;
+	}
+
+	.woocommerce-MyAccount-navigation-link:after {
+		content: '';
+		display: block; 
+		height: 22px;
+		width: 22px;
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+		position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+		margin: auto 0;
+	}
+
+	.woocommerce-MyAccount-navigation-link--edit-address:after {
+		background-image: url(/ph7-company/wp-content/themes/ph7company/assets/img/icons/home.svg);
 	}
 
 	/* ==============================

@@ -2,8 +2,14 @@
 @use "../modules/buttons/button-hamburger";
 @use "../modules/buttons/search-close";
 
+.home .m-header{
+	@media(min-width: $size-desktop) {
+		position: fixed;
+	}
+}
+
 .m-header {
-	color: $white;
+	color: set-alpha($white, .75);
 	width: 100%;
 	position: fixed;
 	top: 0;
@@ -16,16 +22,16 @@
 	font-weight: 500;
 	max-height: 65px;
 	backdrop-filter: blur(10px);
+	font-family: "IBM Plex Mono", monospace;
 
 	&.active {
 		max-height: 100vh;
 	}
 
 	@media (min-width: $size-desktop) {
-		background-color: set-alpha(#000, 0.8);
+		background-color: set-alpha(#16161a, 0.9);
 		position: sticky;
 		backdrop-filter: blur(1.5625rem);
-		background-color: #000;
 		max-height: none;
 		transition: 0.35s ease;
 		height: 60px;
@@ -92,7 +98,7 @@
 				top: -3px;
 
 				@media (min-width: $size-desktop) {
-					height: 40px;
+					height: 38px;
 				}
 			}
 		}
@@ -118,13 +124,6 @@
 				justify-content: center;
 				cursor: pointer;
 
-				&.account {
-					svg {
-						fill: none;
-						height: 25px;
-					}
-				}
-
 				@media (min-width: $size-desktop) {
 					width: 40px;
 					height: 40px;
@@ -144,7 +143,6 @@
 		font-size: 13px;
 
 		@media (min-width: $size-desktop) {
-			letter-spacing: 0.02em;
 			z-index: 99;
 			opacity: 1;
 			background-color: transparent;
@@ -174,14 +172,25 @@
 		}
 
 		a {
-			color: $white;
+			color: set-alpha($white, .75);
 			text-decoration: none;
 			line-height: 1;
 			cursor: pointer;
-			display: block;
+			transition: color .4s ease-in-out;
+
+			&:hover {
+				color: $white;
+			}
 
 			@media (min-width: $size-desktop) {
 				display: inline-block;
+			}
+		}
+
+		span {
+			transition: color .4s ease-in-out;
+			&:hover {
+				color: $white;
 			}
 		}
 
@@ -225,7 +234,7 @@
 
 				span::after {
 					content: "";
-					// background-image: url(../img/icons/arrow-down.svg);
+					background-image: url(/ph7-company/wp-content/themes/ph7company/assets/img/icons/arrow-down.svg);
 					display: inline-block;
 					height: 8px;
 					width: 11px;
@@ -352,11 +361,12 @@
 	.m-header-search {
 		display: flex;
 		justify-content: flex-end;
+		height: 40px;
 
 		.m-header-search__body {
 			transition:
-				width 0.4s,
-				opacity 0.4s;
+			width 0.4s,
+			opacity 0.4s;
 			display: flex;
 			width: 40px;
 			overflow: hidden;
@@ -375,11 +385,6 @@
 				border: 0;
 				padding: 0;
 				cursor: pointer;
-
-				svg {
-					fill: $white;
-					height: 20px;
-				}
 			}
 
 			.m-header-search__form {
@@ -387,6 +392,7 @@
 				width: 0%;
 				overflow: hidden;
 				transition: 0.4s;
+				margin-top: 0;
 
 				@media (max-width: $size-desktop) {
 					display: none;
@@ -449,7 +455,7 @@
 				opacity: 1;
 				visibility: visible;
 				right: 0;
-				transform: rotate(0deg);
+				transform: rotate(45deg);
 			}
 		}
 	}

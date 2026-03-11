@@ -154,9 +154,4 @@ endif;
         </div>
     </section>
 
-
-    <a class="m-whatsapp" href="https://wa.me/<?php echo $whatsapp; ?>" target="_blank" title="Whatsapp" data-action="click" data-category="whatsapp" data-label="Whatsapp Flutuante" data-value="">
-        <img src="<?= $theme_uri ?>/assets/img/icons/whatsapp-white.svg" width="34" height="34" alt="Whatsapp">
-    </a>
-
 </section>
