@@ -8,10 +8,6 @@
 		color: #000;
 	}
 
-	svg {
-		fill: #000;
-	}
-
 	.m-footer__content {
 		padding: 40px 0 28px;
 		line-height: 1.5;
@@ -198,30 +194,5 @@
 				width: auto;
 			}
 		}
-	}
-}
-
-.m-whatsapp {
-	background: #128c7e;
-	width: 58px;
-	height: 58px;
-	position: fixed;
-	border-radius: 100%;
-	text-decoration: none;
-	bottom: 20px;
-	right: 20px;
-	z-index: 9999999;
-
-	img {
-		margin: 0 auto;
-		top: 13px;
-		display: block;
-		position: relative;
-		height: 31px;
-		width: auto;
-	}
-
-	&:hover {
-		filter: brightness(105%);
 	}
 }

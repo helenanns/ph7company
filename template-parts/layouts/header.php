@@ -45,6 +45,16 @@
                                 </div>
                             </a>
                         </li>
+                        
+                        <li>
+                            <a href="<?php echo home_url(); ?>/minha-conta">
+                                <div class="icon wishlist">
+                                    <?php echo file_get_contents(
+                                    	$theme_uri . '/assets/img/icons/heart.svg',
+                                    ); ?>
+                                </div>
+                            </a>
+                        </li> 
                         <li>
                             <div class="icon">
                                 <?php get_template_part(

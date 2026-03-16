@@ -49,9 +49,9 @@ if (has_post_thumbnail()) {
 
         <figure class="m-card__img" style="background-image: url('<?= esc_url($thumbnail[0]) ?>');">
             <?php if ($discount_percentage):
-            	echo '<span class="m-card-product-sale">-' .
+            	echo '<span class="m-card-product-sale">' .
             		round($discount_percentage, 2) .
-            		'% </span>';
+            		'% OFF </span>';
             endif; ?>
             <?php if (has_post_thumbnail()): ?>
                 

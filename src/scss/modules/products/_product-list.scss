@@ -54,6 +54,10 @@
 		display: none;
 	}
 
+	.swipper-wrapper {
+		height: auto!important;
+	}
+
 	&.--blue,
 	&.--dark {
 		color: $white;
