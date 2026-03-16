@@ -3,10 +3,10 @@ global $theme_uri;
 $theme_uri = get_template_directory_uri();
 
 // ACF Fields
-include('includes/functions/acf.php');
+include 'includes/functions/acf.php';
 
 // Set Head Content
-include('includes/functions/set-head-content.php');
+include 'includes/functions/set-head-content.php';
 
 // Post Types
 include 'includes/functions/post-types.php';

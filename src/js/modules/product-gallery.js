@@ -1,15 +1,26 @@
 /* eslint-disable no-unused-vars */
-import Swiper, { Navigation, Thumbs } from 'swiper';
+import Swiper, { Navigation, Thumbs, EffectFade } from 'swiper';
+
+import 'swiper/css';
+// import 'swiper/css/navigation';
+import 'swiper/css/effect-fade';
 
 const productThumbnail = () => {
-	const productThumb = new Swiper('.JS__product-thumbs .swiper', {
-		modules: [Navigation],
+	const thumbsEl = document.querySelector('.JS__product-thumbs');
+	const imagesEl = document.querySelector('.JS__product-images');
+
+	if (!thumbsEl || !imagesEl) {
+		return;
+	}
+
+	const productThumb = new Swiper(thumbsEl, {
+		modules: [Navigation, Thumbs],
 		spaceBetween: 20,
 		slidesPerView: 6,
-		// watchSlidesProgress: true,
+		watchSlidesProgress: true,
 		navigation: {
-			nextEl: '.JS__product-thumbs .swiper-button-next',
-			prevEl: '.JS__product-thumbs .swiper-button-prev',
+			nextEl: '.JS__product-thumbs-next',
+			prevEl: '.JS__product-thumbs-prev',
 		},
 		breakpoints: {
 			1024: {
@@ -18,12 +29,23 @@ const productThumbnail = () => {
 		},
 	});
 
-	const productSwiper = new Swiper('.JS__product-images', {
-		modules: [Thumbs],
+	new Swiper(imagesEl, {
+		modules: [Thumbs, EffectFade],
 		slidesPerView: 1,
+		speed: 300,
+		autoHeight: false,
 		thumbs: {
 			swiper: productThumb,
 		},
+		breakpoints: {
+			1024: {
+				effect: 'fade',
+				fadeEffect: {
+					crossFade: true,
+				},
+			}
+		},
 	});
 };
+
 export default productThumbnail;
