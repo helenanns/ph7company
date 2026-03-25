@@ -7,12 +7,13 @@
 	aspect-ratio: 0.8465;
 
 	@media (min-width: $size-desktop) {
-		aspect-ratio: 2 / 1;
+		// aspect-ratio: 2 / 1;
+		aspect-ratio: auto;
+		height: 80vh;
 	}
 
 	.swiper {
 		height: 100%;
-		// border-radius: 14px;
 		overflow: hidden;
 	}
 

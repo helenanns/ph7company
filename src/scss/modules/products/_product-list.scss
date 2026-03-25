@@ -98,14 +98,13 @@
 			margin-bottom: 0;
 			font-size: to-rem(19px);
 			line-height: 1;
-			letter-spacing: 0.05em;
 			font-weight: 600;
 			color: $black;
 			text-align: center;
 			text-transform: uppercase;
 
 			@media (min-width: $size-desktop) {
-				font-size: to-rem(26px);
+				font-size: to-rem(24px);
 			}
 		}
 

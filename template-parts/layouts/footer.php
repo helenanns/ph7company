@@ -51,14 +51,6 @@ endif;
             </div>
 
             <div>
-                <span class="title">Navegue</span>
-                <?php wp_nav_menu([
-                	'theme_location' => 'footer',
-                	'menu_class' => 'm-footer__menu',
-                ]); ?>
-            </div>
-
-            <div>
                 <span class="title">Institucional</span>
                 <?php wp_nav_menu([
                 	'theme_location' => 'footer-nav',
@@ -99,34 +91,34 @@ endif;
                 <span class="title">Formas de Pagamento</span>
                 <ul>
                     <li>
-                        <img src="<?= $theme_uri ?>/assets/img/payments/visa.svg" alt="Visa"  width="" height="">
+                        <img src="<?= $theme_uri ?>/assets/img/payments/visa.svg" alt="Visa" width="60" height="60">
                     </li>
                     <li>
-                        <img src="<?= $theme_uri ?>/assets/img/payments/mastercard.png" alt="Mastercard"  width="" height="">
+                        <img src="<?= $theme_uri ?>/assets/img/payments/mastercard.svg" alt="Mastercard" width="60" height="60">
                     </li>
                     <li>
-                        <img src="<?= $theme_uri ?>/assets/img/payments/american-express.svg" alt="American Express"  width="" height="">
+                        <img src="<?= $theme_uri ?>/assets/img/payments/american-express.svg" alt="American Express" width="60" height="60">
                     </li>
                     <li>
-                        <img src="<?= $theme_uri ?>/assets/img/payments/discover.png" alt="Discovery"  width="" height="">
+                        <img src="<?= $theme_uri ?>/assets/img/payments/discover.png" alt="Discovery" width="60" height="60">
                     </li>
                     <li>
-                        <img src="<?= $theme_uri ?>/assets/img/payments/elo.svg" alt="Elo"  width="" height="">
+                        <img src="<?= $theme_uri ?>/assets/img/payments/elo.svg" alt="Elo" width="60" height="60">
                     </li>
                     <li>
-                        <img src="<?= $theme_uri ?>/assets/img/payments/aura.png" alt="Aura"  width="" height="">
+                        <img src="<?= $theme_uri ?>/assets/img/payments/aura.png" alt="Aura" width="60" height="60">
                     </li>
                     <li>
-                        <img src="<?= $theme_uri ?>/assets/img/payments/jcb.png" alt="JCB"  width="" height="">
+                        <img src="<?= $theme_uri ?>/assets/img/payments/jcb.png" alt="JCB" width="60" height="60">
                     </li>
                     <li>
-                        <img src="<?= $theme_uri ?>/assets/img/payments/hipercard.svg" alt="Hipercard"  width="" height="">
+                        <img src="<?= $theme_uri ?>/assets/img/payments/hipercard.svg" alt="Hipercard" width="60" height="60">
                     </li>
                     <li>
-                        <img src="<?= $theme_uri ?>/assets/img/payments/hiper.png" alt="Hiper"  width="" height="">
+                        <img src="<?= $theme_uri ?>/assets/img/payments/hiper.png" alt="Hiper" width="60" height="60">
                     </li>
                     <li>
-                        <img src="<?= $theme_uri ?>/assets/img/payments/pix.svg" alt="Pix"  width="" height="">
+                        <img src="<?= $theme_uri ?>/assets/img/payments/pix.svg" alt="Pix" width="60" height="60">
                     </li>
                 </ul>
 
