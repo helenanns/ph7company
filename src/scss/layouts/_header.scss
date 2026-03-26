@@ -2,14 +2,14 @@
 @use "../modules/buttons/button-hamburger";
 @use "../modules/buttons/search-close";
 
-.home .m-header{
-	@media(min-width: $size-desktop) {
+.home .m-header {
+	@media (min-width: $size-desktop) {
 		position: fixed;
 	}
 }
 
 .m-header {
-	color: set-alpha($white, .75);
+	color: set-alpha($white, 0.75);
 	width: 100%;
 	position: fixed;
 	top: 0;
@@ -29,7 +29,7 @@
 	}
 
 	@media (min-width: $size-desktop) {
-		background-color: set-alpha(#16161a, 0.9);
+		background-color: set-alpha(#000, 0.9);
 		position: sticky;
 		backdrop-filter: blur(1.5625rem);
 		max-height: none;
@@ -172,11 +172,11 @@
 		}
 
 		a {
-			color: set-alpha($white, .75);
+			color: set-alpha($white, 0.75);
 			text-decoration: none;
 			line-height: 1;
 			cursor: pointer;
-			transition: color .4s ease-in-out;
+			transition: color 0.4s ease-in-out;
 
 			&:hover {
 				color: $white;
@@ -188,7 +188,7 @@
 		}
 
 		span {
-			transition: color .4s ease-in-out;
+			transition: color 0.4s ease-in-out;
 			&:hover {
 				color: $white;
 			}
@@ -365,8 +365,8 @@
 
 		.m-header-search__body {
 			transition:
-			width 0.4s,
-			opacity 0.4s;
+				width 0.4s,
+				opacity 0.4s;
 			display: flex;
 			width: 40px;
 			overflow: hidden;

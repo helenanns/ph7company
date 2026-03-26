@@ -2,14 +2,14 @@
 
 .m-footer {
 	background-color: set-alpha(#16161a, 1);
-	color: set-alpha($white, .75);
+	color: set-alpha($white, 0.9);
 
 	a {
-			color: currentColor;
-			font-family: "IBM Plex Mono", monospace;
-			&:hover {
-				color: #fff;
-			}
+		color: currentColor;
+		// font-family: "IBM Plex Mono", monospace;
+		&:hover {
+			color: #fff;
+		}
 	}
 
 	.m-footer__content {
@@ -85,8 +85,7 @@
 			gap: 38px;
 
 			@media (min-width: $size-desktop) {
-				grid-template-columns: repeat(5, 1fr);
-				grid-template-columns: 1.1fr 1fr 1.3fr 1.5fr 1.5fr;
+				grid-template-columns: repeat(4, 1fr);
 			}
 		}
 
@@ -96,6 +95,7 @@
 			margin-bottom: 18px;
 			letter-spacing: 0;
 			font-size: to-rem(16px);
+			text-transform: uppercase;
 		}
 
 		.m-footer__menu {
@@ -129,7 +129,6 @@
 			@media (max-width: $size-desktop) {
 				height: 32px;
 				width: 32px;
-				background: #fff;
 				border-radius: 100%;
 			}
 
@@ -178,7 +177,6 @@
 			align-items: center;
 
 			@media (min-width: $size-desktop) {
-				max-width: 220px;
 				margin-bottom: 24px;
 			}
 
@@ -190,7 +188,7 @@
 			}
 
 			img {
-				height: 19px;
+				height: 60px;
 				width: auto;
 			}
 		}

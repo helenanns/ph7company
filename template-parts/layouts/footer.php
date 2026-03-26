@@ -63,9 +63,6 @@ endif;
                 <ul class="m-footer__menu">
                 <?php if ($phone): ?>
                     <li>
-                        <?php echo file_get_contents(
-                        	$theme_uri . '/assets/img/icons/whatsapp.svg',
-                        ); ?>
                         <a href="wa.me/<?php echo $whatsapp; ?>" target="_blank">
                             +55 <?php echo $phone; ?>
                         </a>
@@ -74,7 +71,6 @@ endif;
 
                 <?php if ($email): ?>
                     <li class="mail">
-                        <?php echo file_get_contents($theme_uri . '/assets/img/icons/email.svg'); ?>
                         <a href="mailto:<?php echo $email; ?>" target="_blank">
                             <?php echo $email; ?>
                         </a>
@@ -91,46 +87,24 @@ endif;
                 <span class="title">Formas de Pagamento</span>
                 <ul>
                     <li>
-                        <img src="<?= $theme_uri ?>/assets/img/payments/visa.svg" alt="Visa" width="60" height="60">
+                        <img src="<?= $theme_uri ?>/assets/img/payments/visa.svg" alt="Visa" width="60" height="60" loading="lazy">
                     </li>
                     <li>
-                        <img src="<?= $theme_uri ?>/assets/img/payments/mastercard.svg" alt="Mastercard" width="60" height="60">
+                        <img src="<?= $theme_uri ?>/assets/img/payments/mastercard.svg" alt="Mastercard" width="60" height="60" loading="lazy">
                     </li>
                     <li>
-                        <img src="<?= $theme_uri ?>/assets/img/payments/american-express.svg" alt="American Express" width="60" height="60">
+                        <img src="<?= $theme_uri ?>/assets/img/payments/american-express.svg" alt="American Express" width="60" height="60" loading="lazy">
                     </li>
                     <li>
-                        <img src="<?= $theme_uri ?>/assets/img/payments/discover.png" alt="Discovery" width="60" height="60">
+                        <img src="<?= $theme_uri ?>/assets/img/payments/pix.svg" alt="Pix" width="60" height="60" loading="lazy">
                     </li>
                     <li>
-                        <img src="<?= $theme_uri ?>/assets/img/payments/elo.svg" alt="Elo" width="60" height="60">
+                        <img src="<?= $theme_uri ?>/assets/img/payments/elo.svg" alt="Elo" width="60" height="60" loading="lazy">
                     </li>
                     <li>
-                        <img src="<?= $theme_uri ?>/assets/img/payments/aura.png" alt="Aura" width="60" height="60">
-                    </li>
-                    <li>
-                        <img src="<?= $theme_uri ?>/assets/img/payments/jcb.png" alt="JCB" width="60" height="60">
-                    </li>
-                    <li>
-                        <img src="<?= $theme_uri ?>/assets/img/payments/hipercard.svg" alt="Hipercard" width="60" height="60">
-                    </li>
-                    <li>
-                        <img src="<?= $theme_uri ?>/assets/img/payments/hiper.png" alt="Hiper" width="60" height="60">
-                    </li>
-                    <li>
-                        <img src="<?= $theme_uri ?>/assets/img/payments/pix.svg" alt="Pix" width="60" height="60">
+                        <img src="<?= $theme_uri ?>/assets/img/payments/mercadopago.svg" alt="Elo" width="60" height="60" loading="lazy">
                     </li>
                 </ul>
-
-                <span class="title">Formas de envio</span>
-                <ul class="payments">
-                    <li>
-                        <img src="<?= $theme_uri ?>/assets/img/payments/pac.png" alt="Visa"  width="" height="">
-                    </li>
-                    <li>
-                        <img src="<?= $theme_uri ?>/assets/img/payments/sedex.png" alt="Mastercard"  width="" height="">
-                    </li>
-                </ul>  
             </div>
 
         </div>

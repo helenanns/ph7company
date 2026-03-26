@@ -20,7 +20,7 @@ const productSliders = () => {
 				1024: {
 					slidesPerView: 4,
 					slidesPerGroup: 1,
-					spaceBetween: 26,
+					spaceBetween: 24,
 				},
 			},
 			navigation: {

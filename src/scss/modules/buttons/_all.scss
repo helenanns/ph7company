@@ -8,40 +8,20 @@
 	background-color: $black;
 	font-size: to-rem(14px);
 	line-height: 1.2;
-	padding: 1em 1.5em;
-	border: 1px solid $black;
+	padding: 12px 14px;
+	border: 0;
 	text-align: center;
 	text-transform: uppercase;
-	font-weight: 600;
+	font-weight: 500;
 	font-family: $font-primary;
+	transition: 0.4s ease;
+	border-radius: 4px;
 
 	&:hover {
-		opacity: .8;
-	}
-
-	&.--white {
-		background-color: $white;
-		color: $black;
-
-		&:hover {
-			background-color: $black;
-			color: $white;
-		}
+		opacity: 0.75;
 	}
 
 	&.--blue {
 		background-color: $blue;
-		color: $white;
-
-		&:hover {
-			background-color: $black;
-		}
-	}
-
-	&.--black {
-		&:hover {
-			background-color: $blue;
-			color: $white;
-		}
 	}
 }

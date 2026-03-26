@@ -55,7 +55,7 @@
 	}
 
 	.swipper-wrapper {
-		height: auto!important;
+		height: auto !important;
 	}
 
 	&.--blue,
@@ -102,6 +102,7 @@
 			color: $black;
 			text-align: center;
 			text-transform: uppercase;
+			font-family: $font-secondary;
 
 			@media (min-width: $size-desktop) {
 				font-size: to-rem(24px);
@@ -130,8 +131,8 @@
 		grid-template-columns: repeat(2, 1fr);
 
 		@media (min-width: $size-desktop) {
-			row-gap: 36px;
-			column-gap: 32px;
+			row-gap: 24px;
+			column-gap: 24px;
 			grid-template-columns: repeat(4, 1fr);
 		}
 	}
