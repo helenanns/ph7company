@@ -82,7 +82,6 @@ $gray-medium: #ccc;
 
 	label {
 		display: block;
-		text-transform: uppercase;
 		letter-spacing: 1px;
 		margin-bottom: 6px;
 	}
@@ -180,16 +179,28 @@ $gray-medium: #ccc;
 	}
 }
 
+
+
+.u-columns h2 {
+	text-align: center;
+}
+
 .woocommerce-form-login,
-.woocommerce-form-register,
-.woocommerce .u-column1,
-.woocommerce .u-column2 {
+.woocommerce-form-register {
 	background: $white;
 	color: $black;
 	border: 1px solid $black;
 	border-radius: 18px;
 	padding: 32px 24px;
 	margin-bottom: 32px;
+
+	.required {
+		display: none;
+	}
+
+	input[type=text], input[type=email], input[type=password] {
+		background-color: #f1f1f1;
+	}
 }
 
 .woocommerce .col2-set {
@@ -199,8 +210,6 @@ $gray-medium: #ccc;
 	margin: 0 -12px;
 }
 
-.woocommerce .col2-set .u-column1,
-.woocommerce .col2-set .u-column2,
 .woocommerce .col2-set .col-1,
 .woocommerce .col2-set .col-2 {
 	width: 100%;
