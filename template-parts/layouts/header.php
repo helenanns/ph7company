@@ -46,8 +46,8 @@
                             </a>
                         </li>
                         
-                        <li>
-                            <a href="<?php echo home_url(); ?>/minha-conta">
+                        <li style="display: none;">
+                            <a href="<?php echo home_url('/conta'); ?>">
                                 <div class="icon wishlist">
                                     <?php echo file_get_contents(
                                     	$theme_uri . '/assets/img/icons/heart.svg',
