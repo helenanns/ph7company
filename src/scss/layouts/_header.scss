@@ -23,6 +23,7 @@
 	max-height: 65px;
 	backdrop-filter: blur(10px);
 	font-family: "IBM Plex Mono", monospace;
+	box-shadow: 0 0 #000, 0 0 #000, 0 0 #000, 0 0 #000, 0 8px 32px #00000014;
 
 	&.active {
 		max-height: 100vh;

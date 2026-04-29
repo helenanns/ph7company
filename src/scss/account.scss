@@ -84,6 +84,8 @@ $gray-medium: #ccc;
 		display: block;
 		letter-spacing: 1px;
 		margin-bottom: 6px;
+		font-size: 12px;
+    line-height: 1;
 	}
 
 	input[type="text"],
@@ -180,40 +182,123 @@ $gray-medium: #ccc;
 }
 
 
+.l-page-login {
+	.l-page-header {
+		display: none;
+	}
+
+	.woocommerce-form-login,
+	.woocommerce-form-register {
+		background: $white;
+		color: $black;
+		border-radius: 18px;
+		padding: 32px 24px;
+		margin-bottom: 32px;
+
+		.required {
+			display: none;
+		}
+
+		input[type=text], input[type=email], input[type=password] {
+			background-color: #f5f5f5;
+			border-radius: 8px;
+			margin: 0;
+			height: 42px;
+			border: 0;
+
+			&:focus {
+				    box-shadow: rgb(0 60 75 / 14%) 0px 0px 0px 4px, rgb(42 126 147 / 36%) 0px 0px 0px 1px;
+			}
+		}
+
+		button[type=submit] {
+			background-color: $blue;
+			color: #fff;
+			border: none;
+			width: 100%;
+			border-radius: 8px;
+			padding: 17px 24px;
+			cursor: pointer;
+			font-size: 14px;
+			transition: background-color 0.3s ease;
+			font-weight: bold;
+			line-height: 1;
+			border-radius: 80px;
+			letter-spacing: .015em;
+
+			&:hover {
+				background-color: darken($blue, 10%);
+			}
+		}
+
+		.password-input {
+			position: relative;
+
+			input {
+				padding-right: 40px;
+			}
+
+			.show-password-input {
+				position: absolute;
+				top: 50%;
+				right: 12px;
+				transform: translateY(-50%);
+				cursor: pointer;
+				font-size: 14px;
+				color: $gray-medium;
+				height: 20px;
+				width: 20px;
+				border: 0;
+				background: red;
+
+				&.display-password {
+					background:blue;
+				}
+			}
+		}
+
+		.woocommerce-form-login__rememberme {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 8px;
+				margin-bottom: 14px;
+				font-size: 11px;
+		}
+	}
+	
+	.woocommerce-LostPassword {
+		text-align: center;
+		font-size: 12px;
+		line-height: 1;
+	}
+
+	@media (max-width: $size-desktop) {
+		.col-2 {
+			position: absolute;
+    	background: #ffff;
+			display: none;
+		}
+	}
+
+
+}
 
 .u-columns h2 {
 	text-align: center;
 }
 
-.woocommerce-form-login,
-.woocommerce-form-register {
-	background: $white;
-	color: $black;
-	border: 1px solid $black;
-	border-radius: 18px;
-	padding: 32px 24px;
-	margin-bottom: 32px;
-
-	.required {
-		display: none;
-	}
-
-	input[type=text], input[type=email], input[type=password] {
-		background-color: #f1f1f1;
-	}
-}
 
 .woocommerce .col2-set {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 24px;
-	margin: 0 -12px;
+	position: relative;
 }
 
 .woocommerce .col2-set .col-1,
 .woocommerce .col2-set .col-2 {
 	width: 100%;
-	padding: 0 12px;
 	box-sizing: border-box;
 }
 
