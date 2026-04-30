@@ -14,6 +14,10 @@
 @use "./layouts/single-product/related";
 
 .l-product {
+	@media (min-width: $size-desktop) {
+		@include header-padding;
+	}
+
 	.l-product-wrapper {
 		@media (min-width: $size-desktop) {
 			display: flex;
@@ -22,6 +26,8 @@
 	}
 }
 
+.reset_variations,
+.yith-wcwl-add-to-wishlist-button__label,
 .quantity,
 .product_meta {
 	display: none !important;

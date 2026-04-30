@@ -15,7 +15,7 @@ const productThumbnail = () => {
 
 	const productThumb = new Swiper(thumbsEl, {
 		modules: [Navigation, Thumbs],
-		spaceBetween: 20,
+		spaceBetween: 4,
 		slidesPerView: 6,
 		watchSlidesProgress: true,
 		navigation: {
@@ -43,7 +43,7 @@ const productThumbnail = () => {
 				fadeEffect: {
 					crossFade: true,
 				},
-			}
+			},
 		},
 	});
 };

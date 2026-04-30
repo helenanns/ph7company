@@ -35,8 +35,96 @@
 			font-size: to-rem(14px);
 			line-height: 1.5;
 
-			h2 {
-				display: none;
+			// h2 {
+			// 	display: none;
+			// }
+		}
+	}
+}
+
+.ph7-accordion {
+	margin-top: var(--space-md, 1.5rem); // ajuste à sua escala
+	border-top: 1px solid currentColor;
+
+	&__item {
+		border-bottom: 1px solid currentColor;
+	}
+
+	&__trigger {
+		all: unset;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		padding: 1rem 0;
+		font-weight: 600;
+		cursor: pointer;
+		gap: 1rem;
+
+		&:focus-visible {
+			outline: 2px solid currentColor;
+			outline-offset: 2px;
+		}
+	}
+
+	&__icon {
+		flex-shrink: 0;
+		width: 1em;
+		height: 1em;
+		position: relative;
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			inset-inline: 0;
+			top: 50%;
+			height: 2px;
+			background: currentColor;
+			translate: 0 -50%;
+			transition:
+				rotate 0.25s ease,
+				opacity 0.25s ease;
+		}
+
+		&::after {
+			rotate: 90deg;
+		}
+	}
+
+	&__trigger[aria-expanded="true"] &__icon {
+		&::after {
+			rotate: 0deg;
+			opacity: 0;
+		}
+	}
+
+	&__panel {
+		overflow: hidden;
+
+		&[hidden] {
+			display: none; // fallback — o JS troca por height animation
+		}
+	}
+
+	&__panel-inner {
+		padding-bottom: 1.5rem;
+
+		// garante que o conteúdo gerado pelo WooCommerce herde bem
+		h2 {
+			font-size: 1rem;
+			margin-bottom: 0.75rem;
+		}
+
+		table {
+			width: 100%;
+			border-collapse: collapse;
+
+			th,
+			td {
+				text-align: left;
+				padding: 0.5rem 0;
+				border-bottom: 1px solid black;
 			}
 		}
 	}

@@ -24,18 +24,17 @@ $products = $fields['products'] ?? [];
 
     // get_template_part('/template-parts/modules/grid-icons', '');
 
-    if (have_rows('products')):
-    	$index = 0;
-
-    	while (have_rows('products')):
+    if (have_rows('components')):
+    	while (have_rows('components')):
     		the_row();
-    		$block = $products[$index];
 
-    		get_template_part('/template-parts/modules/products/product-list', '', [
-    			'fields' => $block,
-    		]);
+    		if (get_row_layout() === 'product-list') {
+    			$block = get_row(true);
 
-    		$index++;
+    			get_template_part('/template-parts/modules/products/product-list', '', [
+    				'fields' => $block,
+    			]);
+    		}
     	endwhile;
     endif;
 

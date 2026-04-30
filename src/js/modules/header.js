@@ -58,7 +58,7 @@ const toggleSearch = () => {
 	const search = document.querySelector('.JS__header-search');
 
 	openSearch.addEventListener('click', () => {
-		search.classList.add('is-active');
+		search.classList.toggle('is-active');
 	});
 
 	closeSearch.addEventListener('click', () => {

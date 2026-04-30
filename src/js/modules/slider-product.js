@@ -11,18 +11,17 @@ const productSliders = () => {
 
 		e.classList.add(classAdd);
 
-		// eslint-disable-next-line no-unused-vars
-		const slider = new Swiper(`.${classAdd} .swiper`, {
+		new Swiper(`.${classAdd} .swiper`, {
 			modules: [Navigation, Pagination],
 			slidesPerView: 2,
 			spaceBetween: 20,
 			breakpoints: {
 				1024: {
 					slidesPerView: 4,
-					slidesPerGroup: 1,
 					spaceBetween: 24,
 				},
 			},
+
 			navigation: {
 				nextEl: `.${classAdd} .swiper-button-next`,
 				prevEl: `.${classAdd} .swiper-button-prev`,
@@ -32,4 +31,5 @@ const productSliders = () => {
 		i += 1;
 	});
 };
+
 export default productSliders;

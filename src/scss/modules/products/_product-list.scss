@@ -4,6 +4,7 @@
 .m-products {
 	width: 100%;
 	padding-top: 46px;
+	padding-bottom: 60px;
 	position: relative;
 	overflow: hidden;
 	color: $black;
@@ -21,46 +22,48 @@
 		}
 	}
 
-	.swiper-button-next,
-	.swiper-button-prev {
-		color: $black;
-
-		&::after {
-			font-size: 16px;
-			color: $black;
-			transition: opacity 0.3s;
-		}
-	}
-
 	.swiper-button-next {
-		right: -34px;
+		right: 2px;
 
 		@media (min-width: $size-desktop) {
-			right: -18px;
+			right: 13px;
 			top: -43px;
 		}
 	}
 
 	.swiper-button-prev {
-		left: -34px;
+		left: 2px;
 
 		@media (min-width: $size-desktop) {
-			left: -18px;
+			left: 13px;
 			top: -43px;
 		}
 	}
 
 	.swiper-button-disabled {
-		display: none;
+		opacity: 0.4;
+		cursor: default;
+	}
+
+	.swiper {
+		overflow: visible;
+
+		@media (min-width: $size-desktop) {
+			overflow: hidden;
+		}
 	}
 
 	.swipper-wrapper {
 		height: auto !important;
 	}
 
-	&.--blue,
 	&.--dark {
 		color: $white;
+		background: $black;
+
+		.m-card__price-value {
+			color: white;
+		}
 
 		.m-products-header,
 		.m-card-product {
@@ -69,18 +72,12 @@
 			}
 		}
 
-		.swiper-button-next,
-		.swiper-button-prev {
-			color: $white;
+		.m-products-link {
+			border: 1px solid #fff;
+			&:hover {
+				opacity: 1;
+			}
 		}
-	}
-
-	&.--dark {
-		background: $black;
-	}
-
-	&.--blue {
-		background: $blue;
 	}
 
 	& > .container {
@@ -90,23 +87,22 @@
 	.m-products-header {
 		margin-bottom: 24px;
 
+		.container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
 		@media (min-width: $size-desktop) {
 			margin-bottom: 27px;
 		}
 
 		h2 {
 			margin-bottom: 0;
-			font-size: to-rem(19px);
+			font-size: to-rem(20px);
 			line-height: 1;
-			font-weight: 600;
-			color: $black;
-			text-align: center;
-			text-transform: uppercase;
+			font-weight: 500;
 			font-family: $font-secondary;
-
-			@media (min-width: $size-desktop) {
-				font-size: to-rem(24px);
-			}
 		}
 
 		a {
@@ -137,9 +133,8 @@
 		}
 	}
 
-	.m-products__link {
-		margin: 41px auto 0;
+	.m-products-link {
 		display: block;
-		width: fit-content;
+		width: 150px;
 	}
 }

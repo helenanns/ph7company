@@ -1,0 +1,67 @@
+@use "./base/imports" as *;
+
+.l-about-hero {
+	position: relative;
+	aspect-ratio: 1920 / 394;
+
+	.image {
+		overflow: hidden;
+		position: relative;
+		height: 100%;
+		width: 100%;
+		display: block;
+
+		img {
+			height: 100%;
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: 100%;
+			object-fit: cover;
+			object-position: 0% 66%;
+		}
+
+		&::after {
+			display: block;
+			content: "";
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: #00000085;
+		}
+	}
+
+	.container {
+		position: absolute;
+		top: 60px;
+		height: calc(100% - 60px);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		color: #fff;
+		text-transform: uppercase;
+		left: 0;
+		right: 0;
+	}
+}
+
+.l-about-content {
+	padding-top: 40px;
+	padding-bottom: 60px;
+
+	.container {
+		max-width: 727px;
+		font-size: 14px;
+		line-height: 1.5;
+	}
+}
+
+.wp-block-image {
+	margin: 52px 0 0;
+}
+.wp-element-caption {
+	text-align: center;
+}
