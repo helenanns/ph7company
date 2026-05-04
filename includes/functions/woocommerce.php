@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/woocommerce/related.php';
 require_once __DIR__ . '/woocommerce/product-image.php';
+require_once __DIR__ . '/woocommerce/account.php';
 
 // Remove WooCommerce CSS
 add_filter('woocommerce_enqueue_styles', '__return_empty_array');
@@ -112,3 +113,4 @@ function ph7_dequeue_wc_gallery_assets()
 	wp_dequeue_style('photoswipe');
 	wp_dequeue_style('photoswipe-default-skin');
 }
+
