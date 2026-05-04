@@ -152,6 +152,11 @@
 			letter-spacing: 0;
 			font-size: to-rem(12px);
 			text-transform: uppercase;
+			cursor: pointer;
+
+			@media (min-width: $size-desktop) {
+				cursor: default;
+			}
 		}
 
 		.m-footer__menu {
@@ -190,7 +195,7 @@
 			border-radius: 100%;
 			border-radius: 4px;
 			transition: 0.5s;
-			height: 16px;
+			height: 17px;
 			width: 16px;
 			border-radius: 100%;
 

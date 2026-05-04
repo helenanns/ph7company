@@ -2,7 +2,11 @@
 
 .l-about-hero {
 	position: relative;
-	aspect-ratio: 1920 / 394;
+	aspect-ratio: 375 / 207;
+
+	@media (min-width: $size-desktop) {
+		aspect-ratio: 1920 / 394;
+	}
 
 	.image {
 		overflow: hidden;

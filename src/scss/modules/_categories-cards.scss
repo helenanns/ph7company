@@ -1,0 +1,56 @@
+@use "../base/imports" as *;
+
+.ph7-categories-cards {
+	background: #070607;
+	padding: 20px 0;
+
+	.container {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 2rem;
+		@media (min-width: $size-desktop) {
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+}
+
+.ph7-category-card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	background-color: #000;
+	aspect-ratio: 220 / 300;
+	background-size: cover;
+	background-position: center;
+	border-radius: 4px;
+	overflow: hidden;
+	text-decoration: none;
+	box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+	transition:
+		transform 0.2s,
+		box-shadow 0.2s;
+}
+.ph7-category-card:hover {
+	transform: translateY(-4px) scale(1.03);
+	box-shadow: 0 6px 24px rgba(0, 0, 0, 0.16);
+}
+.ph7-category-card__name {
+	position: absolute;
+	left: 1.2rem;
+	bottom: 1.2rem;
+	color: #fff;
+	font-size: 1.25rem;
+	font-weight: 700;
+	text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+	z-index: 2;
+}
+.ph7-category-card__arrow {
+	position: absolute;
+	right: 1.2rem;
+	bottom: 1.2rem;
+	z-index: 2;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

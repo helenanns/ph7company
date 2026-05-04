@@ -22,8 +22,6 @@ $products = $fields['products'] ?? [];
     	]);
     endif;
 
-    // get_template_part('/template-parts/modules/grid-icons', '');
-
     if (have_rows('components')):
     	while (have_rows('components')):
     		the_row();
@@ -37,6 +35,8 @@ $products = $fields['products'] ?? [];
     		}
     	endwhile;
     endif;
+
+    get_template_part('/template-parts/modules/grid-icons', '');
 
     get_footer();
     ?> 
