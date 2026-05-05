@@ -35,7 +35,7 @@
 
                 <ul class="m-header-icons__list">
                     <li>
-                        <a href="<?php echo home_url(); ?>/minha-conta">
+                        <a href="<?php echo home_url(); ?>/conta">
                             <div class="icon account">
                                 <?php echo file_get_contents(
                                 	$theme_uri . '/assets/img/icons/account.svg',

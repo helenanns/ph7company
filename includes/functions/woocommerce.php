@@ -2,6 +2,9 @@
 defined('ABSPATH') || exit();
 
 require_once __DIR__ . '/woocommerce/product-single.php';
+require_once __DIR__ . '/woocommerce/related.php';
+require_once __DIR__ . '/woocommerce/product-image.php';
+require_once __DIR__ . '/woocommerce/account.php';
 
 add_filter('woocommerce_enqueue_styles', '__return_empty_array');
 
@@ -18,3 +21,4 @@ function product_list_custom_class($html)
 	$html = '<ul class="m-products-list">';
 	return $html;
 }
+

@@ -13,6 +13,11 @@
 	font-weight: 500;
 	font-family: "IBM Plex Mono", monospace;
 	min-height: 65px;
+	box-shadow: 0 0 #000, 0 0 #000, 0 0 #000, 0 0 #000, 0 8px 32px #00000014;
+
+	&.active {
+		max-height: 100vh;
+	}
 
 	@media (min-width: $size-desktop) {
 		background-color: set-alpha(#000, 0.8);
