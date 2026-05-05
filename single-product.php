@@ -17,9 +17,6 @@ get_header('shop');
 		<?php do_action('woocommerce_after_main_content'); ?>
 	</div>
 
-	<?php
-/* do_action( 'woocommerce_sidebar' ); */
-?>
 </main>
 
 <?php get_footer('shop');

@@ -7,12 +7,11 @@
 	aspect-ratio: 0.8465;
 
 	@media (min-width: $size-desktop) {
-		aspect-ratio: 2 / 1;
+		aspect-ratio: 1920 / 909;
 	}
 
 	.swiper {
 		height: 100%;
-		// border-radius: 14px;
 		overflow: hidden;
 	}
 
@@ -26,6 +25,10 @@
 			display: block;
 			object-fit: cover;
 			object-position: center;
+
+			@media (min-width: $size-desktop) {
+				object-position: center 3%;
+			}
 		}
 
 		figure {
@@ -102,6 +105,7 @@
 		margin: auto;
 		height: fit-content;
 		width: 100%;
+		display: none;
 
 		@media (max-width: $size-desktop) {
 			padding-top: 74px;
@@ -125,7 +129,7 @@
 			line-height: 1;
 			width: to-rem(678px);
 			font-weight: 400;
-			letter-spacing: 0.02em;
+			font-style: italic;
 			max-width: 70%;
 			margin-bottom: 28px;
 

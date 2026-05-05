@@ -1,17 +1,22 @@
 @use "../../base/imports" as *;
 
 .l-product .summary {
+	@media (min-width: $size-desktop) {
+		width: 43%;
+	}
+
 	.product_title {
-		font-size: to-rem(28px);
+		font-size: to-rem(18px);
 		line-height: 1.1;
 		margin-bottom: 24px;
+		font-weight: 400;
 	}
 
 	.price {
-		font-size: to-rem(29px);
+		font-size: to-rem(20px);
 		line-height: 1;
 		margin: 0;
-		font-weight: 400;
+		font-weight: 600;
 
 		ins {
 			text-decoration: none;
@@ -26,6 +31,11 @@
 	.woocommerce-variation-add-to-cart {
 		display: flex;
 		gap: 15px;
+		width: 100%;
+
+		& > div {
+			width: 100%;
+		}
 
 		.quantity {
 			display: flex;
@@ -46,8 +56,15 @@
 		}
 
 		.m-button {
+			display: block;
 			width: 100%;
-			padding: 1.15rem;
+			border-radius: 0;
+			font-size: to-rem(12px);
+			height: 48px;
+			min-height: 48px;
+			padding: 12px 16px;
+			border: 0;
+			letter-spacing: 0.1em;
 		}
 	}
 

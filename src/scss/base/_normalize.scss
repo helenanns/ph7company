@@ -8,9 +8,9 @@ input:-internal-autofill-selected {
 	background: transparent;
 }
 
-::selection {
-	background: transparent;
-}
+// ::selection {
+// 	background: transparent;
+// }
 
 html {
 	min-height: 100%;

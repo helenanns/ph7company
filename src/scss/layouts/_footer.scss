@@ -1,26 +1,92 @@
 @use "../base/imports" as *;
 
 .m-footer {
-	background: #dee6e8;
-	color: #000;
+	background-color: #000;
+	color: set-alpha($white, 0.9);
 
 	a {
-		color: #000;
+		color: currentColor;
+		&:hover {
+			color: #fff;
+		}
 	}
 
-	.m-footer__content {
+	.m-footer-menuWrapper {
+		padding-top: 22px;
+
+		@media (max-width: $size-desktop) {
+			max-height: 0;
+			overflow: hidden;
+			transition: max-height 0.3s ease;
+
+			ul {
+				padding-bottom: 22px;
+			}
+		}
+	}
+	.m-footer-item {
+		@media (max-width: $size-desktop) {
+			border-bottom: 1px solid #282828;
+			padding-top: 20px;
+			position: relative;
+
+			&.active {
+				.m-footer-menuWrapper {
+					max-height: 500px;
+				}
+				&:after {
+					transform: rotate(-180deg);
+				}
+			}
+
+			&:after {
+				content: "";
+				background-image: url(/wp-content/themes/ph7company/assets/img/icons/arrow-down.svg);
+				display: inline-block;
+				height: 8px;
+				width: 11px;
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+				transition: 0.25s ease;
+				cursor: pointer;
+				position: absolute;
+				right: 8px;
+				top: 24px;
+				margin: auto;
+				opacity: 0.8;
+
+				@media (min-width: $size-desktop) {
+					position: relative;
+					top: -2px;
+					right: inherit;
+					margin-left: 8px;
+					height: 6px;
+					width: 8px;
+					transform: rotate(0);
+				}
+			}
+		}
+	}
+
+	.m-footer-content {
 		padding: 40px 0 28px;
 		line-height: 1.5;
-		font-size: to-rem(13px);
+		font-size: to-rem(12px);
 
 		@media (min-width: $size-desktop) {
-			padding: 55px 0 49px;
+			padding: 55px 0 29px;
+
+			.m-footer-social {
+				display: none;
+			}
 		}
 
 		li {
 			display: inline-flex;
 			align-items: center;
 			gap: 11px;
+			font-family: $font-primary;
 		}
 
 		a {
@@ -53,6 +119,7 @@
 			justify-content: center;
 			align-items: center;
 			flex-direction: column;
+			padding-bottom: 26px;
 
 			@media (min-width: $size-desktop) {
 				align-items: flex-start;
@@ -61,11 +128,8 @@
 			.logo {
 				width: auto;
 				height: 91px;
-
-				/* margin-bottom overridden by the shorthand below */
 				margin: 0 0 21px;
 				display: block;
-				filter: invert(1);
 
 				@media (min-width: $size-desktop) {
 					margin: 0 0 28px;
@@ -73,34 +137,31 @@
 			}
 		}
 
-		svg {
-			height: 18px;
-			width: auto;
-			opacity: 0.9;
-		}
-
-		.container {
+		.m-footer-contentWrapper {
 			display: grid;
-			gap: 38px;
 
 			@media (min-width: $size-desktop) {
-				grid-template-columns: repeat(5, 1fr);
-				grid-template-columns: 1.1fr 1fr 1.3fr 1.5fr 1.5fr;
-				// max-width: 100%;
+				gap: 38px;
+				grid-template-columns: 0.9fr 1fr 1fr 1fr 1fr;
 			}
 		}
 
 		.title {
 			display: block;
 			font-weight: 600;
-			margin-bottom: 18px;
 			letter-spacing: 0;
-			font-size: to-rem(16px);
+			font-size: to-rem(12px);
+			text-transform: uppercase;
+			cursor: pointer;
+
+			@media (min-width: $size-desktop) {
+				cursor: default;
+			}
 		}
 
 		.m-footer__menu {
 			display: grid;
-			gap: 11px;
+			gap: 10px;
 
 			.sub-menu {
 				display: none;
@@ -113,10 +174,19 @@
 		}
 	}
 
-	.m-footer__social {
+	.m-footer-social {
 		display: flex;
+		justify-content: center;
 		align-items: center;
 		gap: 15px;
+
+		@media (min-width: $size-desktop) {
+			position: absolute;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			width: fit-content;
+		}
 
 		a {
 			display: flex;
@@ -125,74 +195,108 @@
 			border-radius: 100%;
 			border-radius: 4px;
 			transition: 0.5s;
+			height: 17px;
+			width: 16px;
+			border-radius: 100%;
 
 			@media (max-width: $size-desktop) {
 				height: 32px;
 				width: 32px;
-				background: #fff;
-				border-radius: 100%;
+			}
+
+			@media (min-width: $size-desktop) {
+				&:hover {
+					border-radius: 100%;
+					background: #fff;
+					svg {
+						fill: #000;
+					}
+				}
 			}
 
 			&::after {
 				content: none;
 			}
 		}
+
+		svg {
+			height: 20px;
+			width: auto;
+			fill: #fff;
+			opacity: 0.9;
+
+			@media (min-width: $size-desktop) {
+				height: 11px;
+			}
+		}
+
+		.wpp svg {
+			height: 23px;
+			@media (min-width: $size-desktop) {
+				height: 13px;
+			}
+		}
 	}
 
 	.m-footer-copyright {
-		padding: 12px 0;
-		font-size: to-rem(11px);
+		font-size: to-rem(10px);
 		line-height: 1;
-		background: set-alpha($black, 0.1);
+		background: set-alpha($black, 0.9);
+		color: #fff;
 		text-align: center;
+		padding: 18px 0;
+
+		@media (min-width: $size-desktop) {
+			border-top: 1px solid #282828;
+			padding: 1px 0;
+		}
+
+		@media (max-width: $size-desktop) {
+			.m-footer-social {
+				display: none;
+			}
+		}
 
 		.container {
 			position: relative;
+			display: flex;
+			flex-direction: column;
+			gap: 16px;
 
 			@media (min-width: $size-desktop) {
-				display: flex;
+				height: 32px;
+				flex-direction: row;
 				align-items: center;
-				justify-content: center;
+				justify-content: space-between;
 			}
+		}
 
-			& > span {
-				opacity: 0.85;
-				margin-left: 13px;
-				position: relative;
-			}
+		span {
+			opacity: 0.85;
+			margin-left: 13px;
+			position: relative;
 		}
 	}
 
 	.payments {
-		.title {
-			display: none;
-		}
+		display: flex;
+		flex-wrap: wrap;
+		gap: 14px;
+		justify-content: center;
+		align-items: center;
+		margin-top: 36px;
 
-		ul {
+		li {
+			overflow: hidden;
 			display: flex;
-			flex-wrap: wrap;
-			gap: 14px;
 			justify-content: center;
 			align-items: center;
+		}
 
-			@media (min-width: $size-desktop) {
-				max-width: 220px;
-				margin-bottom: 24px;
-			}
-
-			li {
-				background: #ffff;
-				border-radius: 3px;
-				overflow: hidden;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-			}
-
-			img {
-				height: 19px;
-				width: auto;
-			}
+		img {
+			height: 60px;
+			width: auto;
+			opacity: 0.75;
 		}
 	}
 }

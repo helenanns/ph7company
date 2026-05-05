@@ -1,8 +1,11 @@
 @use "./base/imports" as *;
 
 @use "./modules/products/product-list";
+
 @use "./modules/woocommerce/woocommerce-message";
+
 @use "./modules/woocommerce/woocommerce-breadcrumb";
+
 @use "./modules/woocommerce/woo-variation-swatches";
 
 @use "./layouts/single-product/summary";
@@ -11,10 +14,21 @@
 @use "./layouts/single-product/related";
 
 .l-product {
+	@media (min-width: $size-desktop) {
+		@include header-padding;
+	}
+
 	.l-product-wrapper {
 		@media (min-width: $size-desktop) {
 			display: flex;
 			gap: 40px;
 		}
 	}
+}
+
+.reset_variations,
+.yith-wcwl-add-to-wishlist-button__label,
+.quantity,
+.product_meta {
+	display: none !important;
 }

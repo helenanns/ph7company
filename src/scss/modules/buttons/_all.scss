@@ -8,40 +8,88 @@
 	background-color: $black;
 	font-size: to-rem(14px);
 	line-height: 1.2;
-	padding: 1em 1.5em;
-	border: 1px solid $black;
+	padding: 12px 14px;
+	border: 0;
 	text-align: center;
 	text-transform: uppercase;
-	font-weight: 600;
-	font-family: $font-primary;
-
-	&:hover {
-		opacity: .8;
-	}
-
-	&.--white {
-		background-color: $white;
-		color: $black;
-
-		&:hover {
-			background-color: $black;
-			color: $white;
-		}
-	}
+	font-weight: 500;
+	transition: 0.4s ease;
 
 	&.--blue {
-		background-color: $blue;
-		color: $white;
-
-		&:hover {
-			background-color: $black;
-		}
-	}
-
-	&.--black {
+		background-color: #4a7a9b;
 		&:hover {
 			background-color: $blue;
-			color: $white;
 		}
+	}
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+	color: $black;
+	position: absolute;
+	background: set-alpha($black, 0.6);
+	border: 1px solid #fff;
+	outline: none;
+	color: $white;
+	width: 32px;
+	height: 32px;
+	top: -43px;
+	bottom: 0;
+	margin: auto;
+	z-index: 99;
+	cursor: pointer;
+	border-radius: 4px;
+	transition: 0.3s;
+
+	&:hover {
+		background: set-alpha($black, 1);
+	}
+
+	&:after {
+		display: inline-block;
+		height: 11px;
+		width: 9px;
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+		transition: 0.25s ease;
+		cursor: pointer;
+		position: absolute;
+		bottom: 0;
+		margin: auto;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		font-family: swiper-icons;
+		font-size: 13px;
+		font-variant: normal;
+		letter-spacing: 0;
+		line-height: 1;
+		text-transform: none !important;
+		color: currentColor;
+	}
+
+	&:active {
+		scale: 0.9;
+	}
+}
+
+.swiper-button-next {
+	right: 2px;
+
+	&:after {
+		content: "next";
+	}
+
+	@media (min-width: $size-desktop) {
+		right: 13px;
+		top: -43px;
+	}
+}
+
+.swiper-button-prev {
+	&:after {
+		content: "prev";
 	}
 }

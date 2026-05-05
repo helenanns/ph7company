@@ -1,7 +1,7 @@
 <?php global $theme_uri; ?>
 
-<section class="grid-icons container">
-    <ul class="grid-icons__list">
+<section class="grid-icons">
+    <ul class="grid-icons__list container">
         <li class="grid-icons__item">
             <?php echo file_get_contents($theme_uri . '/assets/img/icons/home/frete.svg'); ?>
             <div class="grid-icons__item__content">
@@ -17,10 +17,10 @@
             </div>
         </li>
         <li class="grid-icons__item">
-            <?php echo file_get_contents($theme_uri . '/assets/img/icons/home/payment.svg'); ?>
+            <?php echo file_get_contents($theme_uri . '/assets/img/icons/trade.svg'); ?>
             <div class="grid-icons__item__content">
                 <span class="title">Primeira troca grátis</span>
-                Compras acima de R$ 399
+                Em até 7 dias
             </div>
         </li>
         <li class="grid-icons__item">

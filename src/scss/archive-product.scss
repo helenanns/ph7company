@@ -1,0 +1,7 @@
+@use "./base/imports" as *;
+
+@use "./modules/products/product-list";
+
+.l-archive-product {
+	@include header-padding;
+}

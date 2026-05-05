@@ -3,6 +3,7 @@
 @use "./modules/banners/banner-page";
 
 .l-page {
+	padding-top: 60px;
 	padding-bottom: 60px;
 	font-size: to-rem(16px);
 	line-height: 1.8;
@@ -131,7 +132,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		margin: 0 0 to-rem(74px);
+		margin: 0 0 to-rem(46px);
 		gap: 16px;
 
 		svg {
@@ -202,7 +203,7 @@
 	}
 
 	.container {
-		max-width: 1110px;
+		max-width: 750px;
 	}
 
 	.l-page-wrapper {
