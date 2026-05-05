@@ -59,6 +59,7 @@
 			filter: blur(5px);
 		}
 	}
+
 	&:hover {
 		.m-card-product-sale {
 			background: set-alpha($blue, 1);
@@ -78,11 +79,9 @@
 		margin: 0;
 		width: 100%;
 		padding-top: 125%;
-		// border-radius: 4px;
 		overflow: hidden;
 		position: relative;
-		background-size: cover;
-		background-position: center;
+		transform: translateZ(0);
 
 		img {
 			width: 100%;
@@ -91,15 +90,26 @@
 			object-fit: cover;
 			top: 0;
 			left: 0;
-			transition:
-				opacity 0.4s ease-in,
-				transform 0.4s ease;
+			z-index: 1;
+			transform: translate3d(0, 0, 0);
 			backface-visibility: hidden;
-			will-change: transform;
+			transform-style: preserve-3d;
+			will-change: transform, opacity;
+			transition:
+				opacity 0.35s linear,
+				transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 
 			&:first-of-type {
 				z-index: 2;
 			}
+			&:nth-child(2) {
+				z-index: 1;
+			}
+		}
+
+		.m-card__img-hover {
+			z-index: 1;
+			opacity: 1;
 		}
 	}
 
@@ -109,7 +119,7 @@
 		}
 
 		.m-card__img img:nth-child(2) {
-			transform: scale(1.08);
+			transform: scale3d(1.08, 1.08, 1);
 		}
 	}
 

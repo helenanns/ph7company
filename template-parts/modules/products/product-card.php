@@ -60,23 +60,17 @@ if (has_post_thumbnail()) {
 
         <?php if ($thumbnail): ?>
             <figure class="m-card__img">
-                <!-- IMAGEM PRINCIPAL -->
                 <img
                     src="<?= esc_url($thumbnail[0]) ?>"
                     alt="<?php the_title_attribute(); ?>"
                     loading="lazy"
-                    width="286"
-                    height="280"
                 >
 
-                <!-- IMAGEM HOVER (só carrega quando necessário) -->
                 <?php if ($thumbnail_alt): ?>
                     <img
                         class="m-card__img-hover"
-                        data-src="<?= esc_url($thumbnail_alt[0]) ?>"
+                       src="<?= esc_url($thumbnail_alt[0]) ?>"
                         alt="<?php the_title_attribute(); ?>"
-                        width="286"
-                        height="280"
                     >
                 <?php endif; ?>
 

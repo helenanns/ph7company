@@ -13,14 +13,18 @@
 	font-weight: 500;
 	font-family: "IBM Plex Mono", monospace;
 	min-height: 65px;
-	box-shadow: 0 0 #000, 0 0 #000, 0 0 #000, 0 0 #000, 0 8px 32px #00000014;
+	box-shadow:
+		0 0 #000,
+		0 0 #000,
+		0 0 #000,
+		0 0 #000,
+		0 8px 32px #00000014;
 
 	&.active {
 		max-height: 100vh;
 	}
 
 	@media (min-width: $size-desktop) {
-		background-color: set-alpha(#000, 0.8);
 		position: fixed;
 		max-height: none;
 		transition: 0.35s ease;
@@ -38,7 +42,7 @@
 	.m-header-wrapper {
 		backdrop-filter: blur(10px);
 		width: 100%;
-		background-color: rgba(0, 0, 0, 0.8);
+		background-color: rgba(0, 0, 0, 0.9);
 		transition: max-height 0s;
 		max-height: 65px;
 		position: absolute;
