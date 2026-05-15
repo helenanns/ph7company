@@ -122,7 +122,9 @@
 			}
 
 			svg {
-				scale: 0.9;
+				color: #fff;
+				height: 24px;
+				width: 24px;
 			}
 		}
 
@@ -374,6 +376,11 @@
 			border: 0;
 			padding: 0;
 			cursor: pointer;
+
+			svg {
+				top: -1px;
+    		position: relative;
+			}
 
 			@media (min-width: $size-desktop) {
 				right: 0;
