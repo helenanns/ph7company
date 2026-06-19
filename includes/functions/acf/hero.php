@@ -87,7 +87,7 @@ return [
 						],
 					],
 				],
-	[
+				[
 					'key' => 'field_64d0275c5awe0a',
 					'label' => 'Título',
 					'name' => 'titulo',

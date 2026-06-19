@@ -1,9 +1,11 @@
 import 'normalize.css';
 import 'swiper/css';
 import '../scss/main.scss';
-
 import { toggleMenu, toggleSubmenu, toggleSearch } from './modules/header';
 import { toggleFooter } from './modules/footer';
+import TooltipSystem from './tooltip';
+
+new TooltipSystem();
 
 document.addEventListener('DOMContentLoaded', () => {
 	function header() {

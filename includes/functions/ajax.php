@@ -36,7 +36,7 @@ function post_newsletter()
 			[
 				'msg' => 'Não foi possível cadastrar seu e-mail.',
 			],
-			400
+			400,
 		);
 	} else {
 		$email = sanitize_email($_GET['email']);
@@ -50,7 +50,7 @@ function post_newsletter()
 		[
 			'msg' => 'E-mail cadastrado com sucesso!',
 		],
-		200
+		200,
 	);
 }
 add_action('wp_ajax_nopriv_post_newsletter', 'post_newsletter');

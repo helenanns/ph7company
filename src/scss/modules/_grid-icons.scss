@@ -45,12 +45,25 @@
 		svg {
 			width: 34px;
 			height: auto;
+			width: 38px;
 			fill: $white;
 
 			@media (min-width: $size-desktop) {
 				width: auto;
 				height: 40px;
 			}
+		}
+
+		&.card svg {
+			width: 38px;
+		}
+
+		&.trade svg {
+			width: 35px;
+		}
+
+		&.security svg {
+			width: 35px;
 		}
 
 		.grid-icons__item__content {

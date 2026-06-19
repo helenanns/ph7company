@@ -4,22 +4,25 @@
 	margin: 0 0 16px;
 	display: flex;
 	align-items: center;
-	font-size: to-rem(11px);
+	font-size: to-rem(10px);
+	// text-transform: uppercase;
 	gap: 4px;
-	padding: 20px 0;
-	color: set-alpha($black, 0.75);
-
-	@media (min-width: $size-desktop) {
-		padding: 37px 0 20px;
-		font-size: to-rem(13px);
-	}
+	padding: 16px 0;
+	color: set-alpha($black, 0.5);
+	letter-spacing: 0.02em;
 
 	a {
-		color: set-alpha($black, 0.75);
+		color: currentColor;
 		text-decoration: none;
+		transition: 0.3s all;
 
 		&:hover {
 			color: black;
 		}
+	}
+
+	span {
+		font-size: 8px;
+		margin: 0 3px;
 	}
 }

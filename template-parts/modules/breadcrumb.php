@@ -2,11 +2,13 @@
 $post_id = @$args['post_id']; ?>
 
 <ul class="m-breadcrumb">
-    <?php /* if (is_page()): ?>
+    <?php
+/* if (is_page()): ?>
     <li>
         <a href="<?= home_url() ?>">Homepage</a>
     </li>
-    <?php endif; */?>
+    <?php endif; */
+?>
 
     <li>
         <a href="<?= home_url() ?>">Home</a>
@@ -17,7 +19,7 @@ $post_id = @$args['post_id']; ?>
     </li>
 
     <li>
-        <a href="<?= home_url() ?>"><?php the_title();?></a>
+        <a href="<?= home_url() ?>"><?php the_title(); ?></a>
     </li>
 
 </ul>

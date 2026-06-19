@@ -3,10 +3,19 @@
 @use "./modules/banners/banner-page";
 
 .l-page {
-	padding-top: 60px;
+	padding-top: $header-height;
 	padding-bottom: 60px;
 	font-size: to-rem(16px);
 	line-height: 1.8;
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		color: #41414d;
+	}
 
 	h1 {
 		font-size: to-rem(28px);
@@ -202,13 +211,17 @@
 		margin: 3em 0;
 	}
 
-	.container {
-		max-width: 750px;
-	}
-
 	.l-page-wrapper {
 		font-size: to-rem(16px);
 		padding-top: 70px;
 		line-height: 1.6;
+	}
+}
+
+body:not(.woocommerce-account) {
+	.l-page {
+		.container {
+			max-width: 750px;
+		}
 	}
 }

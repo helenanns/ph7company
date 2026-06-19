@@ -14,10 +14,13 @@
 
                 <div class="m-header-search JS__header-search">
                     <div class="m-header-search-body">
-                        <button class="m-search-button JS__header-openSearch">
-                            <?php echo file_get_contents(
-                            	$theme_uri . '/assets/img/icons/search.svg',
-                            ); ?>
+
+                        <button class="m-search-button JS__header-openSearch" aria-label="Pesquisar" aria-disabled="false" type="button">
+                           <div class="icon">
+                                <?php echo file_get_contents(
+                                	$theme_uri . '/assets/img/icons/search.svg',
+                                ); ?>
+                           </div>
                         </button>
                         
                         <form role="search" method="get" action="/" class="m-header-search-form">
@@ -35,7 +38,7 @@
 
                 <ul class="m-header-icons__list">
                     <li>
-                        <a href="<?php echo home_url(); ?>/conta">
+                        <a href="<?php echo home_url(); ?>/minha-conta" data-tooltip="Minha Conta">
                             <div class="icon account">
                                 <?php echo file_get_contents(
                                 	$theme_uri . '/assets/img/icons/account.svg',
@@ -45,7 +48,7 @@
                     </li>
                     
                     <li>
-                        <a href="<?php echo home_url(); ?>/lista-de-desejos">
+                        <a href="<?php echo home_url(); ?>/lista-de-desejos" data-tooltip="Favoritos">
                             <div class="icon wishlist">
                                 <?php echo file_get_contents(
                                 	$theme_uri . '/assets/img/icons/heart.svg',

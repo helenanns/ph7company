@@ -5,15 +5,12 @@
  * @version 9.4.0
  */
 
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit();
 
 global $product;
 
-if ( ! is_a( $product, WC_Product::class ) || ! $product->is_visible() ) {
+if (!is_a($product, WC_Product::class) || !$product->is_visible()) {
 	return;
 }
 
-get_template_part('/template-parts/modules/products/product-card', 'product', []); 
- 
- 
- 
+get_template_part('/template-parts/modules/products/product-card', 'product', []);

@@ -1,0 +1,13 @@
+@use "./base/imports" as *;
+
+@use "./modules/products/product-list";
+
+.l-search-results {
+	@include header-padding;
+	padding-top: 87px;
+}
+
+.search-title {
+	font-size: 18px;
+	font-weight: 400;
+}

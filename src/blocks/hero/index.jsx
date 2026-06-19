@@ -1,4 +1,4 @@
-import './editor.scss'
-import './style.scss'
+import './editor.scss';
+import './style.scss';
 
-console.log('Hero block entry loaded')
+console.log('Hero block entry loaded');

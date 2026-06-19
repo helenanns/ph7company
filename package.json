@@ -49,6 +49,7 @@
     "vitest": "^2.1.0"
   },
   "dependencies": {
+    "@floating-ui/dom": "^1.7.6",
     "normalize.css": "^8.0.1",
     "plyr": "^3.7.8",
     "select2": "^4.1.0-rc.0",

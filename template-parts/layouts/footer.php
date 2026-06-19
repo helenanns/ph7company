@@ -173,7 +173,7 @@ endif;
             </ul>
 
             
-            <span>Desenvolvido por <a href="https://teyastudio.com.br" target="_blank">Teya Studio</a></span>
+            <span>Desenvolvido por <a href="https://api.whatsapp.com/send/?phone=19994813114" target="_blank">Hlnz</a></span>
         </div>
     </section>
 

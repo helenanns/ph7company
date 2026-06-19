@@ -1,7 +1,8 @@
+@use "../../base/imports" as *;
+
 .variations {
-	margin-bottom: 28px;
 	width: 100%;
-	margin-top: 29px;
+	margin-top: 30px;
 
 	label {
 		margin: 0;
@@ -11,11 +12,13 @@
 	}
 
 	ul {
-		gap: 6px;
+		gap: 4px;
 		margin-top: 9px;
 
 		li {
 			margin: 0;
+			border: 1px solid #000;
+			border-radius: 4px !important;
 		}
 	}
 
@@ -59,13 +62,10 @@
 	box-shadow: none !important;
 }
 
-ul[data-attribute_name="attribute_pa_tamanho"] li {
-	border-radius: 0 !important;
-}
 
 .woo-variation-swatches.wvs-show-label .variations th .woo-selected-variation-item-name,
 .variations label {
-	font-size: 11px;
+	font-size: to-rem(13px);
 	font-weight: 600;
 	margin: 0;
 }
@@ -78,4 +78,18 @@ ul[data-attribute_name="attribute_pa_tamanho"] li {
 
 .woo-variation-swatches .variable-items-wrapper {
 	padding: 8px 0 0;
+}
+
+
+.woo-variation-swatches .variable-items-wrapper .variable-item:not(.radio-variable-item) {
+	box-shadow: none;
+}
+
+.woo-variation-swatches .wvs-style-rounded.variable-items-wrapper .variable-item:not(.radio-variable-item) .variable-item-span {
+	border-radius: 0;
+}
+
+ul[data-attribute_name="attribute_pa_cor"] li,
+.woo-variation-swatches ul[data-attribute_name="attribute_pa_cor"] .variable-item:not(.radio-variable-item) .variable-item-span {
+	border-radius: 100% !important;
 }

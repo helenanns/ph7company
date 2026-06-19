@@ -15,8 +15,8 @@ const productThumbnail = () => {
 
 	const productThumb = new Swiper(thumbsEl, {
 		modules: [Navigation, Thumbs],
-		spaceBetween: 4,
-		slidesPerView: 6,
+		spaceBetween: 8,
+		slidesPerView: 'auto',
 		watchSlidesProgress: true,
 		navigation: {
 			nextEl: '.JS__product-thumbs-next',

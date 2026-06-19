@@ -19,7 +19,7 @@
 		overflow: hidden;
 
 		@media (min-width: $size-desktop) {
-			width: calc(100% - 90px);
+			width: calc(100% - 97px);
 			aspect-ratio: 4 / 5;
 			overflow: hidden;
 			margin: 0 0 0 auto;
@@ -54,32 +54,28 @@
 			margin-top: 10px;
 			overflow: visible;
 			position: relative;
-
-			width: 74px;
-			min-width: 74px;
+			width: 80px;
+			min-width: 80px;
 			margin: 0;
 			position: absolute;
 			left: 0;
-			aspect-ratio: 74 / 542;
-			height: auto;
+			height: 100%;
 
 			.swiper {
 				height: 100%;
 			}
 
 			.swiper-slide {
-				height: 0;
-				padding-bottom: calc(100% / 5);
+				aspect-ratio: 1/1;
+				height: auto;
 				cursor: pointer;
 				overflow: hidden;
 
-				&.swiper-slide-thumb-active {
-					opacity: 1;
-				}
+				// &.swiper-slide-thumb-active {
+				// 	outline: 1px solid black;
+				// }
 
 				@media (min-width: $size-desktop) {
-					padding-bottom: 0;
-					height: 90px !important;
 					width: 100%;
 				}
 
@@ -106,6 +102,8 @@
 				z-index: 3;
 				cursor: pointer;
 				border-radius: 100%;
+
+				display: none;
 			}
 
 			.swiper-button-prev {

@@ -41,7 +41,7 @@
 
 			&:after {
 				content: "";
-				background-image: url(/wp-content/themes/ph7company/assets/img/icons/arrow-down.svg);
+				background-image: url('data:image/svg+xml,<svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1.96187L6.5 8.36625L12 1.96187" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
 				display: inline-block;
 				height: 8px;
 				width: 11px;
@@ -72,10 +72,11 @@
 	.m-footer-content {
 		padding: 40px 0 28px;
 		line-height: 1.5;
-		font-size: to-rem(12px);
+		font-size: to-rem(13px);
 
 		@media (min-width: $size-desktop) {
 			padding: 55px 0 29px;
+			font-size: to-rem(13.5px);
 
 			.m-footer-social {
 				display: none;
@@ -150,8 +151,7 @@
 			display: block;
 			font-weight: 600;
 			letter-spacing: 0;
-			font-size: to-rem(12px);
-			text-transform: uppercase;
+			font-size: to-rem(15px);
 			cursor: pointer;
 
 			@media (min-width: $size-desktop) {
@@ -194,10 +194,11 @@
 			justify-content: center;
 			border-radius: 100%;
 			border-radius: 4px;
-			transition: 0.5s;
-			height: 17px;
-			width: 16px;
-			border-radius: 100%;
+			transition: 0.3s all ease-in-out;
+			height: 24px;
+			width: 24px;
+			border-radius: 50%;
+			border: 2px solid #ffffffbf;
 
 			@media (max-width: $size-desktop) {
 				height: 32px;
@@ -210,6 +211,7 @@
 					background: #fff;
 					svg {
 						fill: #000;
+						color: #000;
 					}
 				}
 			}
@@ -220,26 +222,26 @@
 		}
 
 		svg {
-			height: 20px;
+			height: 15px;
 			width: auto;
 			fill: #fff;
 			opacity: 0.9;
 
 			@media (min-width: $size-desktop) {
-				height: 11px;
+				height: 13px;
 			}
 		}
 
 		.wpp svg {
-			height: 23px;
+			height: 21px;
 			@media (min-width: $size-desktop) {
-				height: 13px;
+				height: 16.6px;
 			}
 		}
 	}
 
 	.m-footer-copyright {
-		font-size: to-rem(10px);
+		font-size: to-rem(12px);
 		line-height: 1;
 		background: set-alpha($black, 0.9);
 		color: #fff;
@@ -264,10 +266,11 @@
 			gap: 16px;
 
 			@media (min-width: $size-desktop) {
-				height: 32px;
 				flex-direction: row;
 				align-items: center;
 				justify-content: space-between;
+				padding-top: 20px;
+				padding-bottom: 20px;
 			}
 		}
 

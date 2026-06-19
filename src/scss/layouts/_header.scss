@@ -112,19 +112,37 @@
 			display: flex;
 			align-items: center;
 
+			.icon {
+				display: flex;
+
+				&.account svg {
+					width: 24px;
+				}
+			}
+
 			a {
 				height: 40px;
 				width: 40px;
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				border-radius: 6px;
+				border-radius: 100%;
+			}
+
+			button,
+			a {
+				border-radius: 100%;
+				transition: 0.25s;
+
+				&:hover {
+					background-color: set-alpha($white, 0.08);
+				}
 			}
 
 			svg {
 				color: #fff;
-				height: 24px;
-				width: 24px;
+				height: 20px;
+				width: 20px;
 			}
 		}
 
@@ -143,7 +161,6 @@
 		width: 100%;
 		display: none;
 		text-transform: uppercase;
-		font-size: 13px;
 
 		@media (min-width: $size-desktop) {
 			z-index: 99;
@@ -176,14 +193,13 @@
 
 		a {
 			color: currentColor;
-			opacity: 0.75;
 			text-decoration: none;
 			line-height: 1;
 			cursor: pointer;
 			transition: opacity 0.4s ease-in-out;
 
 			&:hover {
-				opacity: 1;
+				opacity: 0.8;
 			}
 
 			@media (min-width: $size-desktop) {
@@ -237,7 +253,7 @@
 
 				span::after {
 					content: "";
-					background-image: url(/wp-content/themes/ph7company/assets/img/icons/arrow-down.svg);
+					background-image: url('data:image/svg+xml,<svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1.96187L6.5 8.36625L12 1.96187" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
 					display: inline-block;
 					height: 8px;
 					width: 11px;
@@ -376,11 +392,6 @@
 			border: 0;
 			padding: 0;
 			cursor: pointer;
-
-			svg {
-				top: -1px;
-    		position: relative;
-			}
 
 			@media (min-width: $size-desktop) {
 				right: 0;

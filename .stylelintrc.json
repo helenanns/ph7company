@@ -1,12 +1,12 @@
 {
-  "extends": ["@wordpress/stylelint-config/scss"],
-  "ignoreFiles": ["dist/**/*.css"],
-  "rules": {
-    "selector-class-pattern": null,
-    "no-descending-specificity": null,
-    "declaration-block-no-duplicate-properties": null,
-    "scss/selector-no-redundant-nesting-selector": null,
-    "declaration-property-unit-whitelist": null,
-    "declaration-property-unit-allowed-list": null
-  }
+	"extends": ["@wordpress/stylelint-config/scss"],
+	"ignoreFiles": ["dist/**/*.css"],
+	"rules": {
+		"selector-class-pattern": null,
+		"no-descending-specificity": null,
+		"declaration-block-no-duplicate-properties": null,
+		"scss/selector-no-redundant-nesting-selector": null,
+		"declaration-property-unit-whitelist": null,
+		"declaration-property-unit-allowed-list": null
+	}
 }

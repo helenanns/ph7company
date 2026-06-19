@@ -26,7 +26,7 @@
 		right: 2px;
 
 		@media (min-width: $size-desktop) {
-			right: 13px;
+			right: 7px;
 			top: -43px;
 		}
 	}
@@ -35,7 +35,7 @@
 		left: 2px;
 
 		@media (min-width: $size-desktop) {
-			left: 13px;
+			left: 7px;
 			top: -43px;
 		}
 	}
@@ -86,6 +86,7 @@
 
 	.m-products-header {
 		margin-bottom: 24px;
+		text-align: center;
 
 		.container {
 			display: flex;
@@ -99,7 +100,7 @@
 
 		h2 {
 			margin-bottom: 0;
-			font-size: to-rem(20px);
+			font-size: to-rem(24px);
 			line-height: 1;
 			font-weight: 500;
 			font-family: $font-secondary;

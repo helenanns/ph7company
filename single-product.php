@@ -5,7 +5,9 @@ get_header('shop');
 
 <main class="l-main l-product">
 	<div class="container">
-		<?php do_action('woocommerce_before_main_content'); ?>
+		<?php
+/* do_action('woocommerce_before_main_content'); */
+?>
 
 		<?php while (have_posts()): ?>
 			<?php the_post(); ?>
