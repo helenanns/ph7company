@@ -1,17 +1,10 @@
 @use "./base/imports" as *;
-
 @use "./modules/products/product-list";
-
 @use "./modules/woocommerce/woocommerce-message";
-
 @use "./modules/woocommerce/woocommerce-breadcrumb";
-
 @use "./modules/woocommerce/woo-variation-swatches";
-
 @use "./layouts/single-product/summary";
-
 @use "./layouts/single-product/gallery";
-
 @use "./layouts/single-product/reviews";
 
 // @use "./layouts/single-product/tabs";
@@ -19,19 +12,22 @@
 @use "./layouts/single-product/related";
 
 .l-product {
+
 	@media (min-width: $size-desktop) {
+
 		@include header-padding;
 	}
 
 	.l-product-wrapper {
+
 		@media (min-width: $size-desktop) {
 			display: flex;
 			gap: 40px;
-			padding-top: 20px;
+			padding-top: 29px;
 		}
 	}
 
-	&:after {
+	&::after {
 		content: "";
 		display: block;
 		background: #000;

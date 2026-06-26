@@ -13,12 +13,6 @@
 	font-weight: 500;
 	font-family: "IBM Plex Mono", monospace;
 	min-height: 65px;
-	box-shadow:
-		0 0 #000,
-		0 0 #000,
-		0 0 #000,
-		0 0 #000,
-		0 8px 32px #00000014;
 
 	&.active {
 		max-height: 100vh;
@@ -33,6 +27,7 @@
 	}
 
 	&.active {
+
 		.m-header-wrapper {
 			max-height: 100vh;
 			transition: max-height 1s ease-out;
@@ -192,7 +187,7 @@
 		}
 
 		a {
-			color: currentColor;
+			color: currentcolor;
 			text-decoration: none;
 			line-height: 1;
 			cursor: pointer;
@@ -209,12 +204,14 @@
 
 		span {
 			transition: color 0.4s ease-in-out;
+
 			&:hover {
 				color: $white;
 			}
 		}
 
 		.m-header-menu__nav {
+
 			@media (min-width: $size-desktop) {
 				display: flex;
 				gap: 30px;
@@ -281,6 +278,7 @@
 				}
 
 				&::before {
+
 					@media (min-width: $size-desktop) {
 						content: "";
 						display: block;
@@ -295,6 +293,7 @@
 				}
 
 				&.is-active {
+
 					span::after {
 						transform: rotate(0);
 					}
@@ -304,7 +303,9 @@
 					}
 
 					@media (min-width: $size-desktop) {
+
 						&::before {
+
 							@media (min-width: $size-desktop) {
 								background-color: $white;
 							}
@@ -374,6 +375,7 @@
 	}
 
 	.m-header-search {
+
 		@media (min-width: $size-desktop) {
 			display: flex;
 			justify-content: flex-end;
@@ -469,13 +471,17 @@
 		}
 
 		&.is-active {
+
 			@media (max-width: $size-desktop) {
+
 				.m-header-search-form {
 					max-height: 40px;
 					opacity: 1;
 				}
 			}
+
 			@media (min-width: $size-desktop) {
+
 				.JS__header-openSearch {
 					opacity: 0;
 					visibility: hidden;

@@ -1,8 +1,10 @@
 @use "../../base/imports" as *;
 
 .l-product .summary {
+
 	@media (min-width: $size-desktop) {
 		width: 43%;
+		padding-top: 36px;
 	}
 
 	.product_title {
@@ -65,7 +67,7 @@
 			min-height: 48px;
 			padding: 16px;
 			font-size: to-rem(14px);
-			font-weight: bold;
+			font-weight: 700;
 			border: 0;
 			border-radius: 4px;
 			margin-top: 28px;
@@ -92,4 +94,10 @@
 		font-size: 0.75rem;
 		line-height: 1.5rem;
 	}
+}
+
+.woo-variation-swatches .variable-items-wrapper .variable-item:not(.radio-variable-item) {
+	height: 22px;
+	width: 22px;
+	box-shadow: none;
 }
