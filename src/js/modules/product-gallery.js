@@ -174,6 +174,8 @@ class VariationManager {
 		this.galleryManager = galleryManager;
 		this.$ = window.jQuery;
 		this.variationCache = new Map();
+	this.baseTitle = this.getTitleText();
+	this.basePriceHtml = this.getPriceHtml();
 
 		this.init();
 	}
@@ -193,6 +195,52 @@ class VariationManager {
       if (name && value) attributes[name] = value;
     });
     return attributes;
+  }
+
+  getTitleText() {
+    const titleEl = document.querySelector('.product_title, .entry-title');
+    return titleEl?.dataset.baseTitle || titleEl?.textContent?.trim() || '';
+  }
+
+  getPriceHtml() {
+    const priceEl = document.querySelector('.summary .price, .price');
+    return priceEl?.innerHTML || '';
+  }
+
+  updateProductSummary(variation) {
+    const titleEl = document.querySelector('.product_title, .entry-title');
+    const priceEl = document.querySelector('.summary .price, .price');
+
+    if (titleEl) {
+      if (!titleEl.dataset.baseTitle) {
+        titleEl.dataset.baseTitle = titleEl.textContent.trim();
+      }
+
+      const variationTitle = variation?.variation_title || variation?.name || '';
+      const selectedAttributes = Object.values(this.getSelectedAttributes()).filter(Boolean);
+
+      if (variationTitle) {
+        titleEl.textContent = variationTitle;
+      } else if (selectedAttributes.length) {
+        titleEl.textContent = `${titleEl.dataset.baseTitle} - ${selectedAttributes.join(' / ')}`;
+      } else {
+        titleEl.textContent = titleEl.dataset.baseTitle;
+      }
+    }
+
+    if (priceEl) {
+      if (variation?.price_html) {
+        priceEl.innerHTML = variation.price_html;
+      } else if (variation?.display_price != null) {
+        const priceText = Number(variation.display_price).toLocaleString('pt-BR', {
+          style: 'currency',
+          currency: 'BRL',
+        });
+        priceEl.innerHTML = `<span class="amount">${priceText}</span>`;
+      } else {
+        priceEl.innerHTML = this.basePriceHtml;
+      }
+    }
   }
 
   findSelectedVariation() {
@@ -262,6 +310,7 @@ class VariationManager {
 			this.galleryManager?.rebuildGalleries(variation.custom_gallery);
 		}
 
+		this.updateProductSummary(variation);
 		this.updateUrl();
 	}
 
@@ -273,6 +322,7 @@ class VariationManager {
       } else {
         this.galleryManager?.restoreOriginalGalleries();
       }
+      this.updateProductSummary(selectedVariation);
       this.updateUrl();
     }, 50);
   }
@@ -289,6 +339,7 @@ class VariationManager {
     } else if (!hasColor) {
       this.galleryManager?.restoreOriginalGalleries();
     }
+    this.updateProductSummary(selectedVariation);
     this.updateUrl();
   }
 

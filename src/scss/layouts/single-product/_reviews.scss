@@ -1,132 +1,41 @@
-.woocommerce-Reviews {
-  padding-top: 65px;
-}
 
-
-
-.ivole-reviews {
-    max-width: 1000px;
-    margin: 40px auto;
-    font-family: inherit;
-}
-
-.cr-review-card,
-.ivole-review-card,
-.commentlist li.review {
-    background: #fff;
-    border: 1px solid #e5e5e5;
-    border-radius: 12px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 10px rgba(0,0,0,.04);
-    transition: .2s;
-}
-
-.cr-review-card:hover,
-.commentlist li.review:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 20px rgba(0,0,0,.08);
-}
-
-.comment-author,
-.cr-review-author {
-    font-weight: 700;
-    color: #222;
-    margin-bottom: 8px;
-}
-
-.comment-date,
-.cr-review-date {
-    font-size: 13px;
-    color: #888;
-}
-
-.comment-text,
-.description,
-.cr-review-text {
-    margin-top: 12px;
-    line-height: 1.7;
-    color: #444;
-    font-size: 15px;
+.woocommerce-product-rating {
+    margin-bottom: 18px;
 }
 
 .star-rating {
-    margin-bottom: 10px;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    height: 1.2em;
+    line-height: 1;
+    font-size: 1em;
+    width: 5.4em;
+    font-family: star;
+}
+
+.star-rating::before {
+    content: "★★★★★";
+    color: #d3ced2;
+    float: left;
+    top: 0;
+    left: 0;
+    position: absolute;
 }
 
 .star-rating span {
-    color: #ffb400;
+    overflow: hidden;
+    float: left;
+    top: 0;
+    left: 0;
+    position: absolute;
+    padding-top: 1.5em;
 }
 
-.cr-review-images,
-.cr-review-image {
-    margin-top: 15px;
-}
-
-.cr-review-images img,
-.cr-review-image img {
-    width: 90px;
-    height: 90px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-right: 8px;
-    border: 1px solid #ddd;
-    transition: .2s;
-}
-
-.cr-review-images img:hover,
-.cr-review-image img:hover {
-    transform: scale(1.05);
-}
-
-/* Resumo das avaliações */
-.woocommerce-Reviews-title {
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 25px;
-}
-
-/* Botão enviar avaliação */
-#submit {
-    background: #111;
-    color: #fff;
-    border: 0;
-    border-radius: 8px;
-    padding: 12px 24px;
-    cursor: pointer;
-    transition: .2s;
-}
-
-#submit:hover {
-    background: #333;
-}
-
-/* Formulário */
-.comment-form {
-    background: #f8f8f8;
-    padding: 25px;
-    border-radius: 12px;
-    margin-top: 40px;
-}
-
-.comment-form input,
-.comment-form textarea,
-.comment-form select {
-    width: 100%;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 12px;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-    .cr-review-images img,
-    .cr-review-image img {
-        width: 70px;
-        height: 70px;
-    }
-
-    .commentlist li.review {
-        padding: 15px;
-    }
+.star-rating span::before {
+    content: "★★★★★";
+    top: 0;
+    position: absolute;
+    left: 0;
+    color: #f7a600;
 }
