@@ -70,13 +70,26 @@ function ph7_output_custom_product_gallery()
 add_filter(
 	'woocommerce_available_variation',
 	function ($data, $product, $variation) {
-		$gallery_ids = $variation->get_gallery_image_ids();
 		$gallery_urls = [];
 
+		if (!empty($data['image']['url'])) {
+			$gallery_urls[] = [
+				'full' => $data['image']['full_src'] ?? $data['image']['url'],
+				'thumb' => $data['image']['url'],
+				'mini' => $data['image']['gallery_thumbnail_src'] ?? $data['image']['url'],
+			];
+		}
+
+		$gallery_ids = $variation->get_gallery_image_ids();
 		if (!empty($gallery_ids)) {
 			foreach ($gallery_ids as $id) {
 				$full = wp_get_attachment_image_url($id, 'full');
 				if ($full) {
+					$already_added = !empty($gallery_urls) && isset($gallery_urls[0]['full']) && $gallery_urls[0]['full'] === $full;
+					if ($already_added) {
+						continue;
+					}
+
 					$gallery_urls[] = [
 						'full' => $full,
 						'thumb' => wp_get_attachment_image_url($id, 'woocommerce_single') ?: $full,
@@ -84,14 +97,6 @@ add_filter(
 					];
 				}
 			}
-		}
-
-		if (empty($gallery_urls) && !empty($data['image']['url'])) {
-			$gallery_urls[] = [
-				'full' => $data['image']['full_src'] ?? $data['image']['url'],
-				'thumb' => $data['image']['url'],
-				'mini' => $data['image']['gallery_thumbnail_src'] ?? $data['image']['url'],
-			];
 		}
 
 		$data['custom_gallery'] = $gallery_urls;
