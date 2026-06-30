@@ -27,7 +27,7 @@ function vite_manifest()
 	return file_exists($path) ? json_decode(file_get_contents($path), true) : null;
 }
 
-function vite_enqueue_entry($handle, $entry, $in_footer = true)
+function vite_enqueue_entry($handle, $entry, $deps = [], $in_footer = true)
 {
 	// DEV MODE (Vite server)
 	if (vite_is_dev()) {
@@ -35,7 +35,13 @@ function vite_enqueue_entry($handle, $entry, $in_footer = true)
 			wp_enqueue_script('vite-client', vite_dev_server() . '/@vite/client', [], null, false);
 		}
 
-		wp_enqueue_script($handle, vite_dev_server() . '/' . ltrim($entry, '/'), [], null, $in_footer);
+		wp_enqueue_script(
+			$handle,
+			vite_dev_server() . '/' . ltrim($entry, '/'),
+			$deps,
+			null,
+			$in_footer,
+		);
 
 		return;
 	}
@@ -52,7 +58,7 @@ function vite_enqueue_entry($handle, $entry, $in_footer = true)
 		wp_enqueue_script(
 			$handle,
 			get_template_directory_uri() . '/dist/' . $asset['file'],
-			[],
+			$deps,
 			null,
 			$in_footer,
 		);
@@ -89,7 +95,7 @@ add_action('wp_enqueue_scripts', function () {
 	}
 
 	if (is_singular('product')) {
-		vite_enqueue_entry('theme-product', 'src/js/single-product.js');
+		vite_enqueue_entry('theme-product', 'src/js/single-product.js', ['jquery']);
 	}
 
 	if (is_archive('product')) {
