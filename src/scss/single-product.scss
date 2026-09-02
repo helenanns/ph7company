@@ -7,7 +7,7 @@
 @use "./layouts/single-product/gallery";
 @use "./layouts/single-product/reviews";
 
-// @use "./layouts/single-product/tabs";
+@use "./layouts/single-product/tabs";
 
 @use "./layouts/single-product/related";
 
@@ -39,14 +39,11 @@
 }
 
 .reset_variations,
-.yith-wcwl-add-to-wishlist-button__label,
 .quantity,
-.product_meta, .onsale {
+.product_meta, .onsale 
+{
 	display: none !important;
 }
 
-.wc-tabs,
-.woocommerce-Tabs-panel--description,
-.woocommerce-Tabs-panel--additional_information  {
-	display: none;
-}
+
+

@@ -39,6 +39,23 @@
 			object-position: center;
 			top: 0 !important;
 			left: 0 !important;
+			opacity: 0;
+			transition: opacity 0.3s ease;
+		}
+
+		.l-product-gallery__image.is-loading {
+			opacity: 0.3;
+			background: #f0f0f0;
+		}
+
+		.l-product-gallery__image.is-loaded,
+		.l-product-gallery__thumb.is-loaded {
+			opacity: 1;
+		}
+
+		.swiper-slide {
+			position: relative;
+			overflow: hidden;
 		}
 
 		a {
@@ -54,8 +71,8 @@
 			margin-top: 10px;
 			overflow: visible;
 			position: relative;
-			width: 80px;
-			min-width: 80px;
+			width: 70px;
+			min-width: 70px;
 			margin: 0;
 			position: absolute;
 			left: 0;

@@ -26,3 +26,8 @@ function product_list_custom_class($html)
 	$html = '<ul class="m-products-list">';
 	return $html;
 }
+
+add_filter('woocommerce_breadcrumb_defaults', function ($defaults) {
+	$defaults['delimiter'] = '<span>&gt;</span>';
+	return $defaults;
+});
