@@ -57,3 +57,49 @@ function ph7_output_custom_summary()
 	do_action('ph7_single_product_summary');
 }
 
+add_action('wp', 'ph7_replace_product_tabs');
+
+function ph7_replace_product_tabs()
+{
+	if (!is_product()) {
+		return;
+	}
+
+	// Remove as abas padrão
+	remove_action(
+		'woocommerce_after_single_product_summary',
+		'woocommerce_output_product_data_tabs',
+		10,
+	);
+
+	// Adiciona descrição + avaliações
+	add_action(
+		'woocommerce_after_single_product_summary',
+		'ph7_output_product_description_and_reviews',
+		10,
+	);
+}
+
+function ph7_output_product_description_and_reviews()
+{
+	global $product;
+
+	// Descrição
+	if (!empty($product->get_description())): ?>
+		<section class="product-description">
+			<h2>Descrição</h2>
+			<div class="product-description__content">
+				<?php echo apply_filters('the_content', $product->get_description()); ?>
+			</div>
+		</section>
+	<?php endif;
+
+	// Avaliações
+	if (comments_open()): ?>
+		<section class="product-reviews">
+			<h2>Avaliações</h2>
+
+			<?php comments_template(); ?>
+		</section>
+	<?php endif;
+}
