@@ -5,7 +5,8 @@
 	color: set-alpha($white, 0.9);
 
 	a {
-		color: currentColor;
+		color: currentcolor;
+
 		&:hover {
 			color: #fff;
 		}
@@ -24,22 +25,26 @@
 			}
 		}
 	}
+
 	.m-footer-item {
+
 		@media (max-width: $size-desktop) {
 			border-bottom: 1px solid #282828;
 			padding-top: 20px;
 			position: relative;
 
 			&.active {
+
 				.m-footer-menuWrapper {
 					max-height: 500px;
 				}
-				&:after {
+
+				&::after {
 					transform: rotate(-180deg);
 				}
 			}
 
-			&:after {
+			&::after {
 				content: "";
 				background-image: url('data:image/svg+xml,<svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1.96187L6.5 8.36625L12 1.96187" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
 				display: inline-block;
@@ -76,7 +81,7 @@
 
 		@media (min-width: $size-desktop) {
 			padding: 55px 0 29px;
-			font-size: to-rem(13.5px);
+			font-size: to-rem(12px);
 
 			.m-footer-social {
 				display: none;
@@ -197,23 +202,10 @@
 			transition: 0.3s all ease-in-out;
 			height: 24px;
 			width: 24px;
-			border-radius: 50%;
-			border: 2px solid #ffffffbf;
 
 			@media (max-width: $size-desktop) {
 				height: 32px;
 				width: 32px;
-			}
-
-			@media (min-width: $size-desktop) {
-				&:hover {
-					border-radius: 100%;
-					background: #fff;
-					svg {
-						fill: #000;
-						color: #000;
-					}
-				}
 			}
 
 			&::after {
@@ -226,14 +218,11 @@
 			width: auto;
 			fill: #fff;
 			opacity: 0.9;
-
-			@media (min-width: $size-desktop) {
-				height: 13px;
-			}
 		}
 
 		.wpp svg {
 			height: 21px;
+
 			@media (min-width: $size-desktop) {
 				height: 16.6px;
 			}
@@ -241,7 +230,7 @@
 	}
 
 	.m-footer-copyright {
-		font-size: to-rem(12px);
+		font-size: to-rem(11px);
 		line-height: 1;
 		background: set-alpha($black, 0.9);
 		color: #fff;
@@ -254,6 +243,7 @@
 		}
 
 		@media (max-width: $size-desktop) {
+
 			.m-footer-social {
 				display: none;
 			}

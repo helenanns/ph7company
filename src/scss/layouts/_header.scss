@@ -191,22 +191,32 @@
 			text-decoration: none;
 			line-height: 1;
 			cursor: pointer;
-			transition: opacity 0.4s ease-in-out;
-
-			&:hover {
-				opacity: 0.8;
-			}
+			transition: 0.4s ease-in-out;
 
 			@media (min-width: $size-desktop) {
-				display: inline-block;
+				height: 100%;
+				display: inline-flex;
+				padding: 0 15px;
+				align-items: center;
+
+				&:hover {
+					background-color: set-alpha($white, 0.08);
+				}
 			}
 		}
 
 		span {
-			transition: color 0.4s ease-in-out;
+			transition: 0.4s ease-in-out;
 
-			&:hover {
-				color: $white;
+			@media (min-width: $size-desktop) {
+				padding: 0 15px;
+				height: 100%;
+				display: inline-flex;
+				align-items: center;
+
+				&:hover {
+					background-color: set-alpha($white, 0.08);
+				}
 			}
 		}
 
@@ -214,7 +224,6 @@
 
 			@media (min-width: $size-desktop) {
 				display: flex;
-				gap: 30px;
 				position: inherit;
 				height: auto;
 				background-color: transparent;
@@ -328,13 +337,14 @@
 				@media (min-width: $size-desktop) {
 					max-height: none;
 					position: absolute;
-					top: 60px;
+					top: 64px;
 					left: -12px;
-					background: set-alpha($black, 0.7);
-					padding: 20px 26px 26px;
+					background: set-alpha($black, 1);
+					padding: 12px 0;
 					width: 253px;
 					opacity: 0;
 					visibility: hidden;
+					border-radius: 0 0 4px 4px;
 					transition:
 						opacity 0.35s ease,
 						visibility 0.35s ease;
@@ -346,11 +356,20 @@
 					text-transform: initial;
 
 					@media (min-width: $size-desktop) {
-						margin-bottom: 31px;
+						padding: 12px 0;
+						border-bottom: 1px solid #282828;
+
+						&:hover {
+							background-color: set-alpha($white, 0.05);
+						}
 					}
 
 					&:last-of-type {
 						margin-bottom: 0;
+
+						@media (min-width: $size-desktop) {
+							border-bottom: 0;
+						}
 					}
 
 					&::before {

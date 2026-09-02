@@ -173,7 +173,7 @@ endif;
             </ul>
 
             
-            <span>Desenvolvido por <a href="https://api.whatsapp.com/send/?phone=19994813114" target="_blank">Hlnz</a></span>
+            <span><a href="https://api.whatsapp.com/send/?phone=19994813114" target="_blank">teyastud.io</a></span>
         </div>
     </section>
 

@@ -7,7 +7,7 @@ function mytheme_add_woocommerce_support()
 }
 add_action('after_setup_theme', 'mytheme_add_woocommerce_support');
 
-require_once __DIR__ . '/woocommerce/product-single.php';
+require_once __DIR__ . '/woocommerce/single-product.php';
 require_once __DIR__ . '/woocommerce/related.php';
 require_once __DIR__ . '/woocommerce/account.php';
 
